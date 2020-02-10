@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on ck-blog</title>
+    <link>/tags/networking/</link>
+    <description>Recent content in Networking on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 27 Oct 2019 17:07:40 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Layerability and Abstraction</title>
+      <link>/posts/layerability/</link>
+      <pubDate>Sun, 27 Oct 2019 17:07:40 +0100</pubDate>
+      
+      <guid>/posts/layerability/</guid>
+      <description>Layerability and Networking An interesting aspect of Networking is how different protocols are layered. For example, to view this page, you had to make an HTTP request. That request was delivered using the TCP protocol, which in turn used the IP protocol, and finally the underlying protocol to send data to your router (skimming a bit over details). Each of these layers only makes use of the one directly beneath it: an implementation of an HTTP client worries about TCP, the TCP code in your OS deals with IP, etc.</description>
+    </item>
+    
+    <item>
+      <title>Bittorrent Is Hard - 1</title>
+      <link>/posts/bittorrent-the-hard-parts1/</link>
+      <pubDate>Fri, 03 May 2019 16:54:09 +0200</pubDate>
+      
+      <guid>/posts/bittorrent-the-hard-parts1/</guid>
+      <description>About these posts I&amp;rsquo;ve been working on a bittorrent client in haskell recently. It&amp;rsquo;s now at the point where it can download torrents in the wild.
+The protocol itself is well specified, although it takes a few read-throughs to get the hang of it. The first time I read through the protocol I didn&amp;rsquo;t understand much. But as I started implementing different parts of the protocol, those parts of the document started making more and more sense.</description>
+    </item>
+    
+    <item>
+      <title>Notes on Ripple</title>
+      <link>/posts/notes-on-ripple/</link>
+      <pubDate>Tue, 09 Apr 2019 13:04:46 +0200</pubDate>
+      
+      <guid>/posts/notes-on-ripple/</guid>
+      <description>mermaid.initialize({startOnLoad: True}); Ripple itself I recently spent a week working on a tiny irc-like service, called ripple. The main difference between ripple and a traditional chat service is the complete lack of a central server.
+In this post I explore different ways to organise decentralised services like ripple, and then explain how ripple itself works.
+Organisation One of the tougher problems in taking a normal service and decentralising it is how to shape the network.</description>
+    </item>
+    
+  </channel>
+</rss>

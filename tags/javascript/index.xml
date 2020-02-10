@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on ck-blog</title>
+    <link>/tags/javascript/</link>
+    <description>Recent content in Javascript on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 09 Jan 2020 10:10:11 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React Pitfalls: useState initialization</title>
+      <link>/posts/react-pitfalls-usestate/</link>
+      <pubDate>Thu, 09 Jan 2020 10:10:11 +0100</pubDate>
+      
+      <guid>/posts/react-pitfalls-usestate/</guid>
+      <description>Summary This is a quick post about a &amp;ldquo;gotcha&amp;rdquo; I encountered recently in a React application. This involved the use of React&amp;rsquo;s useState hook, which had a subtle difference between how I thought the hook worked, and how it actually worked.
+React Hooks If you&amp;rsquo;re already familiar with hooks in React, feel free to skip this section. This is just a recap for those out of the loop.
+Although the first real framework I worked with was Vue (I don&amp;rsquo;t count the one application I built with JQuery as having used a framework), I&amp;rsquo;ve been using React a ton lately, and it&amp;rsquo;s really been growing on me.</description>
+    </item>
+    
+  </channel>
+</rss>

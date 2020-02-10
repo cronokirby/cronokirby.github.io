@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrency on ck-blog</title>
+    <link>/tags/concurrency/</link>
+    <description>Recent content in Concurrency on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 31 Aug 2019 19:18:13 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Poline</title>
+      <link>/posts/poline/</link>
+      <pubDate>Sat, 31 Aug 2019 19:18:13 -0400</pubDate>
+      
+      <guid>/posts/poline/</guid>
+      <description>(Note: this is a first draft)
+This is a post about Poline, a tiny programming language I wrote recently. The main &amp;ldquo;gimmick&amp;rdquo; of Poline is a feature called Green Threads. In fact, Poline doesn&amp;rsquo;t have many other features besides them.
+Green what? Green Threads are a way of managing concurrency. The core idea is to have many lightweight threads scheduled over fewer OS threads. These tiny threads are then managed by the runtime itself, instead of the OS.</description>
+    </item>
+    
+    <item>
+      <title>Data Races vs Race Conditions</title>
+      <link>/posts/data-races-vs-race-conditions/</link>
+      <pubDate>Fri, 14 Jun 2019 20:15:10 +0200</pubDate>
+      
+      <guid>/posts/data-races-vs-race-conditions/</guid>
+      <description>This is a quick post about the difference between Data Races and Race Conditions, and how data structures or patterns providing freedom from data races can fail to provide race condition freedom.
+The examples will be given in Go, since that&amp;rsquo;s a language with a few of the concurrent constructs that come into play here, as well as the language that sparked this blog post in the first place.
+Data Races I agree almost entirely with rust&amp;rsquo;s definition of data races.</description>
+    </item>
+    
+  </channel>
+</rss>

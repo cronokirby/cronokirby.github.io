@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on ck-blog</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 16 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Poline</title>
+      <link>/projects/poline/</link>
+      <pubDate>Fri, 16 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/poline/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Poline&lt;/strong&gt; is a little programming language I wrote to learn
+about implementing Green Threading. The language
+doesn&amp;rsquo;t feature much more than string litterals, and mechanisms
+for spawning threads and communicating between them.&lt;/p&gt;
+&lt;p&gt;Green Threads allow many logical threads in a program to
+execute on a limited number of actual OS threads. They
+can be preempted off if they invoke a blocking operation.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ginkou</title>
+      <link>/projects/ginkou/</link>
+      <pubDate>Fri, 28 Jun 2019 20:55:57 +0200</pubDate>
+      
+      <guid>/projects/ginkou/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Ginkou&lt;/strong&gt; is a program to build up a corpus of searchable sentences.
+&lt;strong&gt;Ginkou&lt;/strong&gt; can consume Japanese sentences from the command line, or from a text
+file, parse those sentences into words, and then index those sentences for
+easy retrieval. Given a word, &lt;strong&gt;Ginkou&lt;/strong&gt; can look up sentences containing
+that word, even if it&amp;rsquo;s in a different form, such as a conjugated verb.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Persistent-ts</title>
+      <link>/projects/persistent-ts/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/persistent-ts/</guid>
+      <description>&lt;p&gt;This is a library providing a handful of persistent data structures for Typescript.
+This includes immutable collections like linked-lists, and clojure-style vectors.
+Persistent data structures are immutable, but can efficiently share data between instances,
+and are thus more efficient than a normal copy-on-write collection when working without mutation.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Serve-csv</title>
+      <link>/projects/serve-csv/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/serve-csv/</guid>
+      <description>&lt;p&gt;This is a program that can take a folder of CSV files and serve them as a REST API.
+The program also uses a JSON file for each file, to specify how each column maps to a JSON
+field. The program is written in Go to make use of the built-in HTTP server.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Haze</title>
+      <link>/projects/haze/</link>
+      <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/haze/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Haze&lt;/strong&gt; is a complete bittorrent client, capable of downloading any kind
+of torrent found in the wild. Bittorrent is a peer-to-peer protocol, where a client
+joins a large swarm of peers in order to download a file of common interest. Haskell was
+used in order to help manage the concurrency involved in communicating with a large number of
+peers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dex</title>
+      <link>/projects/dex/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/dex/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cronokirby.github.io/dex&#34;&gt;Live&lt;/a&gt;.
+&lt;strong&gt;Dex&lt;/strong&gt; is a little frontend app for searching and seeing stats about Pokemon, made with Vue.
+The app wraps around the &lt;a href=&#34;https://pokeapi.co/&#34;&gt;pokeapi&lt;/a&gt; REST API for information about each Pokemon.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ripple</title>
+      <link>/projects/ripple/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/ripple/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Ripple&lt;/strong&gt; is a program implementing a small decentralised chat protocol, written in &lt;em&gt;Go&lt;/em&gt;.
+The protocol involves participating nodes ferrying messages to eachother in a ring like fashion.
+New nodes can join the chat by talking to any of the existing nodes in the swarm. &lt;em&gt;Go&lt;/em&gt; is used for
+simple networking and concurrency, as well as to provide both a command line, and a graphical terminal interface.
+&lt;a href=&#34;/posts/notes-on-ripple/&#34;&gt;Read More&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Huffman-rs</title>
+      <link>/projects/huffman-rs/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/huffman-rs/</guid>
+      <description>&lt;p&gt;This is a CLI program using &lt;em&gt;Huffman Coding&lt;/em&gt; to compress files. The program is written in &lt;em&gt;Rust&lt;/em&gt;
+for efficiency.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bittrickle</title>
+      <link>/projects/bittrickle/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/bittrickle/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Bittrickle&lt;/strong&gt; is an implementation of Bittorrent&amp;rsquo;s UDP tracker protocol. A tracker keeps
+track of peers participating in a bittorrent swarms, sharing files. Peers communicate with
+the tracker in order to learn about each other. This implementation uses &lt;em&gt;Rust&lt;/em&gt; because of its
+built-in UDP networking.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cauchy</title>
+      <link>/projects/cauchy/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/cauchy/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Cauchy&lt;/strong&gt; is a program to generate plots of complex functions, written in &lt;em&gt;Rust&lt;/em&gt;
+&lt;strong&gt;Cauchy&lt;/strong&gt; is hardware-accelerated, using &lt;em&gt;OpenGL&lt;/em&gt; to generate the plots using the GPU.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Darby</title>
+      <link>/projects/darby/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/darby/</guid>
+      <description>&lt;p&gt;This is a CLI program to take a folder of songs and play them in a random order.
+SDL&amp;rsquo;s audio subsystem is used to play audio files. This program was built to accompany
+&lt;a href=&#34;https://github.com/cronokirby/populate&#34;&gt;populate&lt;/a&gt;, which generates folders filled with songs,
+ready for consumption by this program.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Populate</title>
+      <link>/projects/populate/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/populate/</guid>
+      <description>&lt;p&gt;This is a CLI program that can recreate a music library on a new machine by downloading
+the files from various sources across the web. The program parses a file
+with a hierarchical description of the library to replicate , and reproduces
+that structure by consuming the sources described.
+The program can also split up larger albums (via FFmpeg) into individual songs if necessary.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Peerbin</title>
+      <link>/projects/peerbin/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/peerbin/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cronokirby.github.io/peerbin/#/&#34;&gt;Live&lt;/a&gt;.
+This project provides a version of websites like pastebin, or hastebin, except without
+a central server to store the files; instead users send the files to eachother
+via &lt;a href=&#34;https://webtorrent.io/&#34;&gt;webtorrent&lt;/a&gt;. &lt;em&gt;Elm&lt;/em&gt; is used for the main
+UI components, and &lt;em&gt;Javascript&lt;/em&gt; to glue this code with the webtorrent part.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hax</title>
+      <link>/projects/hax/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/hax/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Hax&lt;/strong&gt; is a bullet hell game, in the same vein as others like &lt;em&gt;Touhou&lt;/em&gt; or &lt;em&gt;Ikaruga&lt;/em&gt;.
+The game is written in Haskell, using SDL for handling the drawing logic. The game
+logic benefits greatly from the use of an entity component system for handling the many entities
+in the game. &lt;a href=&#34;https://hackage.haskell.org/package/apecs&#34;&gt;Apecs&lt;/a&gt; was used to provide the scaffolding
+for this ECS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ludus</title>
+      <link>/projects/ludus/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/ludus/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Ludus&lt;/strong&gt; is an emulator for the NES console, written in &lt;em&gt;Rust&lt;/em&gt;. The emulator
+fully emulates, the core CPU, as well as the PPU and APU, and thus full video
+and audio. The emulator also supports a handful of mappers / cartridge types, and thus
+many common games such as Mario or Zelda.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Alchemy</title>
+      <link>/projects/alchemy/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/alchemy/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Alchemy&lt;/strong&gt; is a library over the API for the chat application
+&lt;a href=&#34;http://discordapp.com/&#34;&gt;Discord&lt;/a&gt;. The library integrates over Discord&amp;rsquo;s REST
+and Websocket APIs in order to help developers write applications for their chat
+servers. &lt;em&gt;Elixir&lt;/em&gt; was used in order to have easy access to the concurrency involved
+in juggling these various resources.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

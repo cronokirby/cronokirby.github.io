@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emulation on ck-blog</title>
+    <link>/tags/emulation/</link>
+    <description>Recent content in Emulation on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 13 Jun 2019 21:35:12 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/emulation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing Ludus</title>
+      <link>/posts/introducing-ludus/</link>
+      <pubDate>Thu, 13 Jun 2019 21:35:12 +0200</pubDate>
+      
+      <guid>/posts/introducing-ludus/</guid>
+      <description>This is a short post about a crate I recently published: https://crates.io/crates/ludus. This crate provides the core logic of an NES emulator, and can be used to build independent GUI applications.
+Ludus started out as a standalone NES emulator, back in October of 2018. At that point, I had gotten a completely working emulator, aside from some pretty glaring audio issues. I wanted to revisit it at some point, in order to fix the audio.</description>
+    </item>
+    
+  </channel>
+</rss>

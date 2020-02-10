@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on ck-blog</title>
+    <link>/tags/rust/</link>
+    <description>Recent content in Rust on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 31 Aug 2019 19:18:13 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Poline</title>
+      <link>/posts/poline/</link>
+      <pubDate>Sat, 31 Aug 2019 19:18:13 -0400</pubDate>
+      
+      <guid>/posts/poline/</guid>
+      <description>(Note: this is a first draft)
+This is a post about Poline, a tiny programming language I wrote recently. The main &amp;ldquo;gimmick&amp;rdquo; of Poline is a feature called Green Threads. In fact, Poline doesn&amp;rsquo;t have many other features besides them.
+Green what? Green Threads are a way of managing concurrency. The core idea is to have many lightweight threads scheduled over fewer OS threads. These tiny threads are then managed by the runtime itself, instead of the OS.</description>
+    </item>
+    
+    <item>
+      <title>Sentence Banking</title>
+      <link>/posts/sentence-banking/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/sentence-banking/</guid>
+      <description>This is a post about ginkou, a tool I made recently. This tool uses Rust, SQLite, as well as mecab to archive sentences, and then to retrieve them based on the words they contain.
+Why would I need this? Unless you&amp;rsquo;re learning Japanese, you probably won&amp;rsquo;t.
+With the way I&amp;rsquo;m approaching it, I try and combine words and grammar into the same flashcard system. This means making new flashcarsd with sentences containing small bits of information I&amp;rsquo;m trying to learn.</description>
+    </item>
+    
+    <item>
+      <title>Introducing Ludus</title>
+      <link>/posts/introducing-ludus/</link>
+      <pubDate>Thu, 13 Jun 2019 21:35:12 +0200</pubDate>
+      
+      <guid>/posts/introducing-ludus/</guid>
+      <description>This is a short post about a crate I recently published: https://crates.io/crates/ludus. This crate provides the core logic of an NES emulator, and can be used to build independent GUI applications.
+Ludus started out as a standalone NES emulator, back in October of 2018. At that point, I had gotten a completely working emulator, aside from some pretty glaring audio issues. I wanted to revisit it at some point, in order to fix the audio.</description>
+    </item>
+    
+  </channel>
+</rss>

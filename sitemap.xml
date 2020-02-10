@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/integrating-notes-and-srs/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/learning/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/srs/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/frontend/</loc>
+    <lastmod>2020-01-09T10:10:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/hooks/</loc>
+    <lastmod>2020-01-09T10:10:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2020-01-09T10:10:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/react/</loc>
+    <lastmod>2020-01-09T10:10:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/react-pitfalls-usestate/</loc>
+    <lastmod>2020-01-09T10:10:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/japanese/</loc>
+    <lastmod>2019-12-28T13:13:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/programming/</loc>
+    <lastmod>2019-12-28T13:13:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/structured-immersion/</loc>
+    <lastmod>2019-12-28T13:13:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/layerability/</loc>
+    <lastmod>2019-10-27T17:07:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/networking/</loc>
+    <lastmod>2019-10-27T17:07:40+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/concurrency/</loc>
+    <lastmod>2019-08-31T19:18:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/poline/</loc>
+    <lastmod>2019-08-31T19:18:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/programming-languages/</loc>
+    <lastmod>2019-08-31T19:18:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rust/</loc>
+    <lastmod>2019-08-31T19:18:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/interfaces-to-traits/</loc>
+    <lastmod>2019-08-17T08:32:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/software-architecture/</loc>
+    <lastmod>2019-08-17T08:32:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/poline/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+    <lastmod>2019-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/sentence-banking/</loc>
+    <lastmod>2019-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/ginkou/</loc>
+    <lastmod>2019-06-28T20:55:57+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/data-races-vs-race-conditions/</loc>
+    <lastmod>2019-06-14T20:15:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/go/</loc>
+    <lastmod>2019-06-14T20:15:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/emulation/</loc>
+    <lastmod>2019-06-13T21:35:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/introducing-ludus/</loc>
+    <lastmod>2019-06-13T21:35:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/persistent-ts/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/functional-programming/</loc>
+    <lastmod>2019-05-14T13:57:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/component-pattern/</loc>
+    <lastmod>2019-05-14T13:57:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/bittorrent-the-hard-parts1/</loc>
+    <lastmod>2019-05-03T16:54:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/distributed-systems/</loc>
+    <lastmod>2019-05-03T16:54:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/serve-csv/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/haze/</loc>
+    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/dex/</loc>
+    <lastmod>2019-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/notes-on-ripple/</loc>
+    <lastmod>2019-04-09T13:04:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/ripple/</loc>
+    <lastmod>2019-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/huffman-rs/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/mutability-is-a-great-secret-to-have/</loc>
+    <lastmod>2019-03-06T11:39:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2019-03-04T21:39:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/inauguration/</loc>
+    <lastmod>2019-03-04T19:48:28+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/bittrickle/</loc>
+    <lastmod>2019-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/cauchy/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/darby/</loc>
+    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/populate/</loc>
+    <lastmod>2018-11-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/peerbin/</loc>
+    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/hax/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/ludus/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/alchemy/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+</urlset>

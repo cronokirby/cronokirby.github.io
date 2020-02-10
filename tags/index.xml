@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on ck-blog</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on ck-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning</title>
+      <link>/tags/learning/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRS</title>
+      <link>/tags/srs/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/srs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frontend</title>
+      <link>/tags/frontend/</link>
+      <pubDate>Thu, 09 Jan 2020 10:10:11 +0100</pubDate>
+      
+      <guid>/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hooks</title>
+      <link>/tags/hooks/</link>
+      <pubDate>Thu, 09 Jan 2020 10:10:11 +0100</pubDate>
+      
+      <guid>/tags/hooks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Thu, 09 Jan 2020 10:10:11 +0100</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>/tags/react/</link>
+      <pubDate>Thu, 09 Jan 2020 10:10:11 +0100</pubDate>
+      
+      <guid>/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Japanese</title>
+      <link>/tags/japanese/</link>
+      <pubDate>Sat, 28 Dec 2019 13:13:00 +0100</pubDate>
+      
+      <guid>/tags/japanese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Sat, 28 Dec 2019 13:13:00 +0100</pubDate>
+      
+      <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>/tags/networking/</link>
+      <pubDate>Sun, 27 Oct 2019 17:07:40 +0100</pubDate>
+      
+      <guid>/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
+      <link>/tags/concurrency/</link>
+      <pubDate>Sat, 31 Aug 2019 19:18:13 -0400</pubDate>
+      
+      <guid>/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming Languages</title>
+      <link>/tags/programming-languages/</link>
+      <pubDate>Sat, 31 Aug 2019 19:18:13 -0400</pubDate>
+      
+      <guid>/tags/programming-languages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>/tags/rust/</link>
+      <pubDate>Sat, 31 Aug 2019 19:18:13 -0400</pubDate>
+      
+      <guid>/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Architecture</title>
+      <link>/tags/software-architecture/</link>
+      <pubDate>Sat, 17 Aug 2019 08:32:00 -0400</pubDate>
+      
+      <guid>/tags/software-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>/tags/go/</link>
+      <pubDate>Fri, 14 Jun 2019 20:15:10 +0200</pubDate>
+      
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emulation</title>
+      <link>/tags/emulation/</link>
+      <pubDate>Thu, 13 Jun 2019 21:35:12 +0200</pubDate>
+      
+      <guid>/tags/emulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional Programming</title>
+      <link>/tags/functional-programming/</link>
+      <pubDate>Tue, 14 May 2019 13:57:24 +0200</pubDate>
+      
+      <guid>/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed Systems</title>
+      <link>/tags/distributed-systems/</link>
+      <pubDate>Fri, 03 May 2019 16:54:09 +0200</pubDate>
+      
+      <guid>/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
