@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Cronokirby's Blog]]></title><description><![CDATA[A blog about programming and other things]]></description><link>https://cronokirby.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Feb 2020 13:12:53 GMT</lastBuildDate><item><title><![CDATA[Review: The New York Trilogy]]></title><description><![CDATA[This is a review of The New York Trilogy written by Paul Auster in 1987. As the title says, this book is actually a trilogy of three shorter…]]></description><link>https://cronokirby.github.io/posts/review-the-new-york-trilogy/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/review-the-new-york-trilogy/</guid><pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a review of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_New_York_Trilogy&quot;&gt;The New York Trilogy&lt;/a&gt; written by &lt;a href=&quot;https://en.wikipedia.org/wiki/Paul_Auster&quot;&gt;Paul Auster&lt;/a&gt; in 1987.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Cronokirby's Blog]]></title><description><![CDATA[A blog about programming and other things]]></description><link>https://cronokirby.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Feb 2020 17:04:40 GMT</lastBuildDate><item><title><![CDATA[Review: The New York Trilogy]]></title><description><![CDATA[This is a review of The New York Trilogy written by Paul Auster in 1987. As the title says, this book is actually a trilogy of three shorter…]]></description><link>https://cronokirby.github.io/posts/review-the-new-york-trilogy/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/review-the-new-york-trilogy/</guid><pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a review of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_New_York_Trilogy&quot;&gt;The New York Trilogy&lt;/a&gt; written by &lt;a href=&quot;https://en.wikipedia.org/wiki/Paul_Auster&quot;&gt;Paul Auster&lt;/a&gt; in 1987.&lt;/p&gt;
 &lt;p&gt;As the title says, this book is actually a trilogy of three shorter novels: &lt;em&gt;City of Glass&lt;/em&gt;,
 &lt;em&gt;Ghosts&lt;/em&gt;, and &lt;em&gt;The Locked Room&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Without spoiling the novel, I will say that it should really be taken as a whole, instead of as three
@@ -315,12 +315,11 @@ on files, and instead focus on sections, and then let people organize their sect
 &lt;h1&gt;What syntax should we use?&lt;/h1&gt;
 &lt;p&gt;A lot of markdown files include a header section allowing YAML (this one included):&lt;/p&gt;
 &lt;h3&gt;Sections&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: &quot;Integrating Notes and SRS&quot;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;---
+title: &amp;quot;Integrating Notes and SRS&amp;quot;
 ---
 
-The content of the post
-&lt;/code&gt;&lt;/pre&gt;
+The content of the post&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I think it&apos;s a good idea to reuse this as a section header. The main difference is that we allow parsing this anywhere
 in the file instead of just at the beginning.&lt;/p&gt;
 &lt;p&gt;We keep treating the content we see as part of that section until we reach&lt;/p&gt;
@@ -329,28 +328,26 @@ in the file instead of just at the beginning.&lt;/p&gt;
 &lt;li&gt;The beginning of a new section&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A section header might end up looking like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-section: &quot;My beautiful section&quot;
-description: &quot;This is a summary about computational mechanics&quot;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;---
+section: &amp;quot;My beautiful section&amp;quot;
+description: &amp;quot;This is a summary about computational mechanics&amp;quot;
 tags:
   - Physics
   - Programming
----
-&lt;/code&gt;&lt;/pre&gt;
+---&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;SRS snippets&lt;/h3&gt;
 &lt;p&gt;For the SRS snippets, you want a way of specifying the prompt and information / extra sections.
 I&apos;ve been thinking of doing it like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;--?
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;--?
 # This is valid markdown
 
 And a question?
 --!
 
-Here&apos;s the answer.
+Here&amp;#39;s the answer.
 
 **still valid markdown**
---?
-&lt;/code&gt;&lt;/pre&gt;
+--?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This is a spin off the section header. It&apos;s nice to have similar syntax, in my opinion, because it avoids adding
 too much unnatural syntax to what&apos;s supposed to more or less be readable in raw form. The point of using
 markdown over JSON is that you can read the markdown file ignoring the extra syntax and get a pretty legible
@@ -382,9 +379,9 @@ This allows you to share your notes on things with other people too, which can b
 &lt;h1&gt;More to come&lt;/h1&gt;
 &lt;p&gt;Well this was just a braindump as a start form some thoughts about this project. I thought I might
 as well put this on my blog, because it&apos;s a bit lacking in posts, and I think some people might gain some benefit from it.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Pitfalls: useState initialization]]></title><description><![CDATA[Summary This is a quick post about a "gotcha" I encountered recently in a React application.
-This involved the use of React's useState hook…]]></description><link>https://cronokirby.github.io/posts/react-pitfalls-useState/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/react-pitfalls-useState/</guid><pubDate>Thu, 09 Jan 2020 09:10:11 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+This involved the use of React's  hook, which…]]></description><link>https://cronokirby.github.io/posts/react-pitfalls-useState/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/react-pitfalls-useState/</guid><pubDate>Thu, 09 Jan 2020 09:10:11 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
 &lt;p&gt;This is a quick post about a &quot;gotcha&quot; I encountered recently in a React application.
-This involved the use of React&apos;s &lt;code&gt;useState&lt;/code&gt; hook, which had a subtle difference
+This involved the use of React&apos;s &lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt; hook, which had a subtle difference
 between how I thought the hook worked, and how it actually worked.&lt;/p&gt;
 &lt;h1&gt;React Hooks&lt;/h1&gt;
 &lt;p&gt;If you&apos;re already familiar with hooks in React, feel free to skip this section. This
@@ -397,54 +394,50 @@ patterns for working on frontend applications.&lt;/p&gt;
 &lt;p&gt;One thing I really like about React is the recent &quot;hooks&quot; feature.&lt;/p&gt;
 &lt;p&gt;Previously, react distinguished between &lt;em&gt;function&lt;/em&gt; components, which took in some parameters,
 called &lt;em&gt;props&lt;/em&gt;, and returned some HTML to be rendered, e.g.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function TitleCard({ name }) {
-  return &amp;#x3C;p&gt;Hi my name is {name}&amp;#x3C;/p&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;TitleCard&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Hi my name is &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You also had &lt;em&gt;class&lt;/em&gt; components, which at first resemble &lt;em&gt;function&lt;/em&gt; components:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class TitleCard extends React.Component {
-  render() {
-    return &amp;#x3C;p&gt;Hi my name is {this.props.name}&amp;#x3C;/p&gt;;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;TitleCard&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Hi my name is &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;But class components also have a lot of other features in addition to just rendering some data.
 Notably, they have access to state:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {count: 0};
-  }
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Counter&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  render() {
-    return (
-      &amp;#x3C;div&gt;
-        &amp;#x3C;p&gt;{this.state.count}&amp;#x3C;/p&gt;
-        &amp;#x3C;button onClick={() =&gt; this.state.count++}&gt;+&amp;#x3C;/button&gt;
-      &amp;#x3C;/div&gt;
-    );
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This component will render a count, and clicking on the button inside that component will increment
 the state of that component.&lt;/p&gt;
 &lt;p&gt;Having a clear way to use state, and other effects like network requests, etc was something missing
 from function components. That&apos;s where hooks come in. Hooks, in brief, allow you to use
 these things in function components.&lt;/p&gt;
-&lt;p&gt;For example, if we wanted to take our &lt;code&gt;Counter&lt;/code&gt; component from the previous example
+&lt;p&gt;For example, if we wanted to take our &lt;code class=&quot;language-text&quot;&gt;Counter&lt;/code&gt; component from the previous example
 using a function component with hooks, it&apos;d look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function Counter() {
-  const [count, setCount] = React.useState(0);
-  return (
-    &amp;#x3C;div&gt;
-      &amp;#x3C;p&gt;{count}&amp;#x3C;/p&gt;
-      &amp;#x3C;button onClick={() =&gt; setCount(c =&gt; c + 1)}&gt;+&amp;#x3C;/button&gt;
-    &amp;#x3C;/div&gt;
-  );
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The hook provides us with two values: &lt;code&gt;count&lt;/code&gt;, and &lt;code&gt;setCount&lt;/code&gt;. The idea is that
-&lt;code&gt;count&lt;/code&gt; always holds the current value of the state, and &lt;code&gt;setCount&lt;/code&gt; allows us to change
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The hook provides us with two values: &lt;code class=&quot;language-text&quot;&gt;count&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;setCount&lt;/code&gt;. The idea is that
+&lt;code class=&quot;language-text&quot;&gt;count&lt;/code&gt; always holds the current value of the state, and &lt;code class=&quot;language-text&quot;&gt;setCount&lt;/code&gt; allows us to change
 this value. The cool thing is that React will always &quot;do the right thing&quot; and magically
 update this value and rerender the component if necessary. Neat!&lt;/p&gt;
 &lt;h1&gt;Rerendering&lt;/h1&gt;
@@ -453,49 +446,46 @@ to make sure that the values a component logically has is always reflected on sc
 This means that if some value changes, because of a hook, or because one of the props changed,
 then a rerender needs to happen to make sure that what&apos;s on screen matches what&apos;s &quot;in the code&quot;.&lt;/p&gt;
 &lt;p&gt;For example, let&apos;s split our counter in two:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function ShowCounter({ count, setCount }) {
-  return (
-    &amp;#x3C;div&gt;
-      &amp;#x3C;p&gt;{count}&amp;#x3C;/p&gt;
-      &amp;#x3C;button onClick={() =&gt; setCount(c =&gt; c + 1)}&gt;+&amp;#x3C;/button&gt;
-    &amp;#x3C;/div&gt;
-  );
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ShowCounter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-function Counter() {
-  const [count, setCount] = React.useState(0);
-  return &amp;#x3C;ShowCounter {...{count, setCount}}/&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now the &lt;code&gt;Counter&lt;/code&gt; component is the one actually holding the state, and the &lt;code&gt;ShowCounter&lt;/code&gt; component
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ShowCounter &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now the &lt;code class=&quot;language-text&quot;&gt;Counter&lt;/code&gt; component is the one actually holding the state, and the &lt;code class=&quot;language-text&quot;&gt;ShowCounter&lt;/code&gt; component
 is just a simple function that shows the data given to it. In order to make sure that the user is
-always seeing the actual value of the counter, React has to rerender the &lt;code&gt;ShowCounter&lt;/code&gt; component
+always seeing the actual value of the counter, React has to rerender the &lt;code class=&quot;language-text&quot;&gt;ShowCounter&lt;/code&gt; component
 whenever the count passed to it changes value.&lt;/p&gt;
-&lt;p&gt;This means that React will end up executing the code of the &lt;code&gt;ShowCounter&lt;/code&gt; function again. This
-is why its important to avoid firing off network requests without &lt;code&gt;useEffect&lt;/code&gt; inside
+&lt;p&gt;This means that React will end up executing the code of the &lt;code class=&quot;language-text&quot;&gt;ShowCounter&lt;/code&gt; function again. This
+is why its important to avoid firing off network requests without &lt;code class=&quot;language-text&quot;&gt;useEffect&lt;/code&gt; inside
 a function component, because you only want to do certain effects when they need to be run,
 and not just when the component frivously rerenders.&lt;/p&gt;
 &lt;h1&gt;State is initialised only once&lt;/h1&gt;
 &lt;p&gt;Now we come to the main pitfall I want to talk about in this post.&lt;/p&gt;
 &lt;p&gt;Let&apos;s allow the user set a value for the counter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function Counter({ initial }) {
-  const [count, setCount] = React.useState(initial);
-  return &amp;#x3C;ShowCounter {...{count, setCount}}&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Based on our previous model, if &lt;code&gt;initial&lt;/code&gt; changes, then the component has to rerender,
-and so &lt;code&gt;useState&lt;/code&gt; gets called with &lt;code&gt;initial&lt;/code&gt;, and so the count becomes &lt;code&gt;initial&lt;/code&gt;, right?&lt;/p&gt;
-&lt;p&gt;Well it turns out that that&apos;s not what happens. In fact with the way &lt;code&gt;useState&lt;/code&gt; works,
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; initial &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;initial&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ShowCounter &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Based on our previous model, if &lt;code class=&quot;language-text&quot;&gt;initial&lt;/code&gt; changes, then the component has to rerender,
+and so &lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt; gets called with &lt;code class=&quot;language-text&quot;&gt;initial&lt;/code&gt;, and so the count becomes &lt;code class=&quot;language-text&quot;&gt;initial&lt;/code&gt;, right?&lt;/p&gt;
+&lt;p&gt;Well it turns out that that&apos;s not what happens. In fact with the way &lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt; works,
 the initial value matters only &lt;strong&gt;the first time a component renders&lt;/strong&gt;. After that, it will
 preserve the state between renders.&lt;/p&gt;
 &lt;p&gt;This means that we need to do this instead:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function Counter({ initial }) {
-  const [count, setCount] = React.useState(0);
-  React.useEffect(() =&gt; setCount(initial), [initial]);
-  return &amp;#x3C;ShowCounter {...{count, setCount}}&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We haven&apos;t gone over the &lt;code&gt;useEffect&lt;/code&gt; hook in detail, but the way it works is that it executes
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; initial &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;initial&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;initial&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ShowCounter &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We haven&apos;t gone over the &lt;code class=&quot;language-text&quot;&gt;useEffect&lt;/code&gt; hook in detail, but the way it works is that it executes
 the callback function only if the values inside the array have changed. So here it will set the counter
 to an initial value, but only when the initial value changes. This is the correct way to do
 something like this.&lt;/p&gt;
@@ -504,23 +494,22 @@ something like this.&lt;/p&gt;
 &lt;p&gt;Well, remember how we went over how React &quot;tries to do the right thing&quot;. Well, it turns out that
 by doing things this way, you actually preserve state between rerenders, which is generally the behavior you want.&lt;/p&gt;
 &lt;p&gt;For example, let&apos;s say we had something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;function Counter({ name }) {
-  const [count, setCount] = React.useState(0);
-  return (
-    &amp;#x3C;div&gt;
-      &amp;#x3C;p&gt;{name}&amp;#x3C;/p&gt;
-      &amp;#x3C;p&gt;{count}&amp;#x3C;/p&gt;
-      &amp;#x3C;button onClick={() =&gt; setCount(c =&gt; c + 1)}&gt;+&amp;#x3C;/button&gt;
-    &amp;#x3C;/div&gt;
-  );
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now we&apos;re showing a name in addition to the value of the count. We want to rerender if the count or the name
 changes, since we want the user to see what the current value actually is, but we don&apos;t want the count to be
-lost just because the name changed. That&apos;s why it makes sense for &lt;code&gt;useState&lt;/code&gt; to preserve the
+lost just because the name changed. That&apos;s why it makes sense for &lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt; to preserve the
 state between rerenders.&lt;/p&gt;
 &lt;p&gt;It&apos;d require a lot more code to create the behavior of preserving state between rerenders if
-it didn&apos;t work that way, but it didn&apos;t take much effort with &lt;code&gt;useEffect&lt;/code&gt; to do what we wanted
+it didn&apos;t work that way, but it didn&apos;t take much effort with &lt;code class=&quot;language-text&quot;&gt;useEffect&lt;/code&gt; to do what we wanted
 in the other case. You generally want to try and make the more common use case easy
 with frameworks, don&apos;t you.&lt;/p&gt;
 &lt;h2&gt;Further Reading&lt;/h2&gt;
@@ -562,7 +551,7 @@ of learning a foreign language as a hobby is to have fun, isn&apos;t it.&lt;/p&g
 it would be for your level of language would help immensely in expediting the learning process.
 If you could know which show to watch next based on what your current vocabulary is, that would
 save a lot of time, and make immersing a lot easier.&lt;/p&gt;
-&lt;p&gt;With immersion, it&apos;s about &lt;code&gt;quantity * quality&lt;/code&gt;, so you want to make it as easy as possible
+&lt;p&gt;With immersion, it&apos;s about &lt;code class=&quot;language-text&quot;&gt;quantity * quality&lt;/code&gt;, so you want to make it as easy as possible
 to get a lot of good quality (i.e. level appropriate) media.&lt;/p&gt;
 &lt;h2&gt;Tracking progress&lt;/h2&gt;
 &lt;p&gt;One aspect of this problem that I&apos;ve briefly gone over without expliciting is tracking your
@@ -622,14 +611,13 @@ way. There are a handful of tools, but the one I&apos;ve used most recently was
 &lt;a href=&quot;http://taku910.github.io/mecab/&quot;&gt;MeCab&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This tool takes the form of a command line program, that accepts a stream of sentences. The output of the tool
 looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ mecab
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ mecab
 猫は食べた
-猫   名詞,一般,*,*,*,*,猫,ネコ,ネコ
-は   助詞,係助詞,*,*,*,*,は,ハ,ワ
-食べ  動詞,自立,*,*,一段,連用形,食べる,タベ,タベ
-た   助動詞,*,*,*,特殊・タ,基本形,た,タ,タ
-EOS
-&lt;/code&gt;&lt;/pre&gt;
+猫	名詞,一般,*,*,*,*,猫,ネコ,ネコ
+は	助詞,係助詞,*,*,*,*,は,ハ,ワ
+食べ	動詞,自立,*,*,一段,連用形,食べる,タベ,タベ
+た	助動詞,*,*,*,特殊・タ,基本形,た,タ,タ
+EOS&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The first line is our sentence, &quot;猫は食べた&quot;, literally &quot;The cat ate&quot;. The next lines are the different words
 MeCab managed to find throughout that sentence, along with their pronunciation, their part of speech, etc.
 For example, the first word it gives us is &quot;猫&quot; meaning &quot;cat&quot;. It tells is that it&apos;s a noun, pronounced &quot;neko&quot;, etc.&lt;/p&gt;
@@ -788,84 +776,77 @@ to focus on this aspect.&lt;/p&gt;
 &lt;p&gt;Before I go into the implementation of Poline, let&apos;s take a look at its syntax.&lt;/p&gt;
 &lt;p&gt;A Poline program consists of a series of function declarations.
 Here&apos;s an example of one of these declarations:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn example(arg1, arg2) {
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn example(arg1, arg2) {
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Each function has a name, and then takes a list of named arguments.&lt;/p&gt;
-&lt;p&gt;The function called &lt;code&gt;main&lt;/code&gt;, is the entry point for a program.&lt;/p&gt;
+&lt;p&gt;The function called &lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt;, is the entry point for a program.&lt;/p&gt;
 &lt;h2&gt;String litterals&lt;/h2&gt;
 &lt;p&gt;The only type of litteral in Poline is the string, which works
 the same as other languages:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&quot;example string&quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;example string&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The only things a variable can contain in Poline are strings, and thread
 handles, as we&apos;ll see later.&lt;/p&gt;
 &lt;h2&gt;Printing&lt;/h2&gt;
 &lt;p&gt;Poline has a statement for printing:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn example(arg) {
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn example(arg) {
     print arg;
-    print &quot;litteral&quot;;
-}
-&lt;/code&gt;&lt;/pre&gt;
+    print &amp;quot;litteral&amp;quot;;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Both variables, and string litterals can be printed. Every statement
 in poline ends with a semicolon. Every function consists of a series
 of statements.&lt;/p&gt;
 &lt;h2&gt;Calling functions&lt;/h2&gt;
 &lt;p&gt;Another type of statement is the function call:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn print(arg) {
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn print(arg) {
     print arg;
 }
 
 fn main() {
-    print(&quot;foo&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
+    print(&amp;quot;foo&amp;quot;);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This works as you&apos;d expect. Extra arguments are ignored, and missing arguments
 are filled in with empty strings.&lt;/p&gt;
 &lt;h2&gt;Creating threads&lt;/h2&gt;
 &lt;p&gt;Now we come to the real interesting parts of Poline.&lt;/p&gt;
 &lt;p&gt;We can create a new thread from a function call:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn print(arg) {
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn print(arg) {
     print arg;
 }
 
 fn main() {
-    spawn print(&quot;a&quot;) as p;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here, the variable &lt;code&gt;p&lt;/code&gt; contains the handle for the thread we&apos;ve spawned.
+    spawn print(&amp;quot;a&amp;quot;) as p;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here, the variable &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt; contains the handle for the thread we&apos;ve spawned.
 The thread will run the function it was called with.&lt;/p&gt;
 &lt;h2&gt;Communicating between threads&lt;/h2&gt;
 &lt;p&gt;Here&apos;s an example program that shows how messaging works:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn print_recv() {
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn print_recv() {
     recv arg;
     print arg;
 }
 
 fn main() {
     spawn print_recv() as p;
-    send &quot;foo&quot; to p;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;After spawning a new thread, we have a handle we can access stored in &lt;code&gt;p&lt;/code&gt;.
-We send the string litteral &lt;code&gt;&quot;foo&quot;&lt;/code&gt; to &lt;code&gt;p&lt;/code&gt;. We could have sent a variable
+    send &amp;quot;foo&amp;quot; to p;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After spawning a new thread, we have a handle we can access stored in &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt;.
+We send the string litteral &lt;code class=&quot;language-text&quot;&gt;&amp;quot;foo&amp;quot;&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt;. We could have sent a variable
 instead of a string litteral too.&lt;/p&gt;
-&lt;p&gt;In the thread &lt;code&gt;p&lt;/code&gt;, we first receive a message, creating a variable named
-&lt;code&gt;arg&lt;/code&gt;, and then we print the contents of that variable.&lt;/p&gt;
+&lt;p&gt;In the thread &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt;, we first receive a message, creating a variable named
+&lt;code class=&quot;language-text&quot;&gt;arg&lt;/code&gt;, and then we print the contents of that variable.&lt;/p&gt;
 &lt;h3&gt;Preemption&lt;/h3&gt;
-&lt;p&gt;We&apos;ll go into the details of this later, but whenever a thread uses &lt;code&gt;recv&lt;/code&gt;,
-it gets preempted until a message is available. When &lt;code&gt;p&lt;/code&gt; calls &lt;code&gt;recv&lt;/code&gt; without
+&lt;p&gt;We&apos;ll go into the details of this later, but whenever a thread uses &lt;code class=&quot;language-text&quot;&gt;recv&lt;/code&gt;,
+it gets preempted until a message is available. When &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt; calls &lt;code class=&quot;language-text&quot;&gt;recv&lt;/code&gt; without
 a message to fulfill that request, it gets preempted, letting another
-thread run. Once a message is sent to &lt;code&gt;p&lt;/code&gt;, it can be considered again.&lt;/p&gt;
+thread run. Once a message is sent to &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt;, it can be considered again.&lt;/p&gt;
 &lt;p&gt;Poline is actually deterministic, because it doesn&apos;t yet have multithreading.
-In this case, &lt;code&gt;p&lt;/code&gt; will always start running after the main thread finishes,
-because the main thread has no blocking &lt;code&gt;recv&lt;/code&gt; calls that preempt it off.&lt;/p&gt;
+In this case, &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt; will always start running after the main thread finishes,
+because the main thread has no blocking &lt;code class=&quot;language-text&quot;&gt;recv&lt;/code&gt; calls that preempt it off.&lt;/p&gt;
 &lt;h1&gt;Implementation&lt;/h1&gt;
 &lt;p&gt;I decided to implement Poline in &lt;em&gt;Rust&lt;/em&gt;, mainly because I&apos;m familiar with
 the language, and because it has good ways of representing ASTs.&lt;/p&gt;
 &lt;p&gt;The interpretation pipeline looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Lexing -&gt; Parsing -&gt; Simplifying -&gt; Interpreting
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Lexing -&amp;gt; Parsing -&amp;gt; Simplifying -&amp;gt; Interpreting&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The lexing phase separates the raw text into tokens,
 making it easier to parser. The parser converts this newly created
 series of tokens into an AST representing the program. The simplifier
@@ -880,71 +861,65 @@ itself for more details about the implementation.&lt;/p&gt;
 takes the raw text of the program, and converts that into
 a series of tokens.&lt;/p&gt;
 &lt;p&gt;For example, this program:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn main() {
-    print &quot;foo&quot;;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn main() {
+    print &amp;quot;foo&amp;quot;;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;gets lexed into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Function Name(&quot;main&quot;) ( ) { Print String(&quot;foo&quot;) ; }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Function Name(&amp;quot;main&amp;quot;) ( ) { Print String(&amp;quot;foo&amp;quot;) ; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Dealing with a sequence of tokens instead of raw text makes the parser&apos;s job much easier.&lt;/p&gt;
 &lt;p&gt;The language is simple enough that the lexer can work with just one character of lookahead.
 Essentially, our lexer only needs the following operations from our source of
 text:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// pseudo code
-fn next(Source) -&gt; Option&amp;#x3C;char&gt;
-fn peek(Source) -&gt; Option&amp;#x3C;char&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first function, &lt;code&gt;next&lt;/code&gt;, will return &lt;code&gt;None&lt;/code&gt; if we&apos;re at the end of our
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// pseudo code
+fn next(Source) -&amp;gt; Option&amp;lt;char&amp;gt;
+fn peek(Source) -&amp;gt; Option&amp;lt;char&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The first function, &lt;code class=&quot;language-text&quot;&gt;next&lt;/code&gt;, will return &lt;code class=&quot;language-text&quot;&gt;None&lt;/code&gt; if we&apos;re at the end of our
 source, and will otherwise return the next available character, and then advance
-that source. For example, given &lt;code&gt;&quot;12&quot;&lt;/code&gt; as our source, the first call to next
-will return &lt;code&gt;Some(&apos;1&apos;)&lt;/code&gt;, the next will return &lt;code&gt;Some(&apos;2&apos;)&lt;/code&gt;, and subsequent calls
-will return &lt;code&gt;None&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The difference between &lt;code&gt;peek&lt;/code&gt;, and &lt;code&gt;next&lt;/code&gt; is that the former doesn&apos;t advance the
-source. Given &lt;code&gt;&quot;12&quot;&lt;/code&gt; as our input, calls to &lt;code&gt;peek&lt;/code&gt; will always return &lt;code&gt;Some(1)&lt;/code&gt;,
-until we call &lt;code&gt;next&lt;/code&gt; to move the input forward.&lt;/p&gt;
-&lt;p&gt;The lexer works by repeatedly calling &lt;code&gt;next&lt;/code&gt;, and then emitting tokens based on
-what it says. The one situation where &lt;code&gt;peek&lt;/code&gt; is needed is parsing names.
+that source. For example, given &lt;code class=&quot;language-text&quot;&gt;&amp;quot;12&amp;quot;&lt;/code&gt; as our source, the first call to next
+will return &lt;code class=&quot;language-text&quot;&gt;Some(&amp;#39;1&amp;#39;)&lt;/code&gt;, the next will return &lt;code class=&quot;language-text&quot;&gt;Some(&amp;#39;2&amp;#39;)&lt;/code&gt;, and subsequent calls
+will return &lt;code class=&quot;language-text&quot;&gt;None&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The difference between &lt;code class=&quot;language-text&quot;&gt;peek&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;next&lt;/code&gt; is that the former doesn&apos;t advance the
+source. Given &lt;code class=&quot;language-text&quot;&gt;&amp;quot;12&amp;quot;&lt;/code&gt; as our input, calls to &lt;code class=&quot;language-text&quot;&gt;peek&lt;/code&gt; will always return &lt;code class=&quot;language-text&quot;&gt;Some(1)&lt;/code&gt;,
+until we call &lt;code class=&quot;language-text&quot;&gt;next&lt;/code&gt; to move the input forward.&lt;/p&gt;
+&lt;p&gt;The lexer works by repeatedly calling &lt;code class=&quot;language-text&quot;&gt;next&lt;/code&gt;, and then emitting tokens based on
+what it says. The one situation where &lt;code class=&quot;language-text&quot;&gt;peek&lt;/code&gt; is needed is parsing names.
 The lexer keeps interpreting the characters as part of the name until a
-non-alpha-numeric character is reached with &lt;code&gt;peek&lt;/code&gt;.&lt;/p&gt;
+non-alpha-numeric character is reached with &lt;code class=&quot;language-text&quot;&gt;peek&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;To handle keywords, the lexer first lexes out a name, and then checks if
-that name corresponds to one of the built-in keywords. This lets &lt;code&gt;printer&lt;/code&gt;
-lex as &lt;code&gt;Name(&quot;printer&quot;)&lt;/code&gt; and not &lt;code&gt;print Name(&quot;er&quot;)&lt;/code&gt;.&lt;/p&gt;
+that name corresponds to one of the built-in keywords. This lets &lt;code class=&quot;language-text&quot;&gt;printer&lt;/code&gt;
+lex as &lt;code class=&quot;language-text&quot;&gt;Name(&amp;quot;printer&amp;quot;)&lt;/code&gt; and not &lt;code class=&quot;language-text&quot;&gt;print Name(&amp;quot;er&amp;quot;)&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Parsing&lt;/h2&gt;
 &lt;p&gt;The
 &lt;a href=&quot;https://github.com/cronokirby/poline/blob/master/src/parser.rs#L219&quot;&gt;parser&lt;/a&gt;
 takes the series of tokens produced by the previous stage, and converts them
 into a single representation of the program as a &lt;a href=&quot;https://github.com/cronokirby/poline/blob/master/src/parser.rs#L192&quot;&gt;syntax tree&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For example, the following program:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn main() {
-    print &quot;main&quot;;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn main() {
+    print &amp;quot;main&amp;quot;;
     spawn main() as p;
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Produces the following tree:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// Slightly simplified rust
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// Slightly simplified rust
 Syntax {
     functions: [
         FunctionDeclaration {
-            name: &quot;main&quot;,
+            name: &amp;quot;main&amp;quot;,
             arg_names: [],
             body: [
-                Statement::Print(Argument::Str(&quot;main&quot;))
-                Statement::Spawn(&quot;p&quot;, FunctionCall {
-                    name: &quot;main&quot;,
+                Statement::Print(Argument::Str(&amp;quot;main&amp;quot;))
+                Statement::Spawn(&amp;quot;p&amp;quot;, FunctionCall {
+                    name: &amp;quot;main&amp;quot;,
                     args: []
                 })
             ]
         }
     ]
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This tree represents the program as presented by the user. The parsing stage
 excludes programs that make no syntactic sense, e.g.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn main() main() {
-    print print ; ; &quot;foo&quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn main() main() {
+    print print ; ; &amp;quot;foo&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;But it can&apos;t do anything for programs that work syntactically, but not logically.&lt;/p&gt;
 &lt;p&gt;The parser is written as a hand-crafted
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Recursive_descent_parser&quot;&gt;recursive descent
@@ -954,14 +929,13 @@ but going into how those work is a bit outside the scope of this post.&lt;/p&gt;
 &lt;p&gt;To illustrate what
 &lt;a href=&quot;https://github.com/cronokirby/poline/blob/master/src/simplifier.rs#L355&quot;&gt;simplification&lt;/a&gt;
 does, let&apos;s take the example program from previously:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn main() {
-    print &quot;main&quot;;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn main() {
+    print &amp;quot;main&amp;quot;;
     spawn main() as p;
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This simplifies into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Program {
-    strings: [&quot;main&quot;],
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Program {
+    strings: [&amp;quot;main&amp;quot;],
     main_function: 0,
     functions: [FunctionDeclaration {
        arg_count: 0,
@@ -973,8 +947,7 @@ does, let&apos;s take the example program from previously:&lt;/p&gt;
           })
        ]
     }]
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The first thing to notice is the extra information in addition to the syntax
 tree. We&apos;ve moved all of the string litterals in our program into an external
 table, and we have an index for the main function. The main work done by
@@ -984,22 +957,20 @@ index. We now refer to string litterals in the AST by their position in the tabl
 Variables are referred to by their position on their stack.&lt;/p&gt;
 &lt;h2&gt;Stack indices&lt;/h2&gt;
 &lt;p&gt;For variables, we refer to them by stack position. For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fn foo(x, y) {
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fn foo(x, y) {
     print x;
     print y;
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;will simplify into:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;FunctionDeclaration {
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;FunctionDeclaration {
     arg_count: 2,
     body: [
         Statement::Print(Argument::Name(0)),
         Statement::Print(Argument::Name(1))
     ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Instead of printing &lt;code&gt;x&lt;/code&gt;, we now print &lt;code&gt;0&lt;/code&gt;, since we&apos;re printing the variable
-with index &lt;code&gt;0&lt;/code&gt; on the stack. We&apos;ll use a stack to contain the contents of our
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Instead of printing &lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt;, we now print &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt;, since we&apos;re printing the variable
+with index &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt; on the stack. We&apos;ll use a stack to contain the contents of our
 variables, so all the interpreter needs to do is lookup that position on the stack.&lt;/p&gt;
 &lt;h2&gt;Shadowing&lt;/h2&gt;
 &lt;p&gt;You might have noticed previously that our spawn statement now takes a single argument
@@ -1015,16 +986,15 @@ contained inside.&lt;/p&gt;
 &lt;p&gt;The main way I tested the interpreter was by comparing expected print outputs to
 what the interpreter actually spit out. In order to test these outputs without
 looking at a terminal, I used a trait for the effects the interpreter needed:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pub trait ProgramIO {
-    fn print(&amp;#x26;mut self, message: &amp;#x26;str);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;pub trait ProgramIO {
+    fn print(&amp;amp;mut self, message: &amp;amp;str);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Instead of printing out directly, the interpreter would instead call this
 method. When testing, we pass an implementation of this trait that appends
 printed messages to a vector. We can inspect this in order to test the interpeter.&lt;/p&gt;
 &lt;h2&gt;State&lt;/h2&gt;
 &lt;p&gt;The state the interpreter maintains looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;current_thread
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;current_thread
 threads [
     mailbox
     calls [
@@ -1032,9 +1002,8 @@ threads [
         statement_index
         stack
     ]
-]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Each thread has a mailbox to contain the messages it receives. The &lt;code&gt;send&lt;/code&gt;
+]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Each thread has a mailbox to contain the messages it receives. The &lt;code class=&quot;language-text&quot;&gt;send&lt;/code&gt;
 statement results in a new variable being pushed there.&lt;/p&gt;
 &lt;p&gt;We also have a sequence of function calls. Everytime a thread calls a function,
 it pushes some new state to the end of these calls. Whenever we reach the end of
@@ -1081,69 +1050,63 @@ let&apos;s look over how that works first.&lt;/p&gt;
 &lt;h2&gt;Inheritance&lt;/h2&gt;
 &lt;p&gt;Java has &lt;em&gt;classes&lt;/em&gt;, and these have &lt;em&gt;methods&lt;/em&gt;.
 For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;class Rectangle {
-  private int height;
-  private int width;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  public Rectangle(height, width) {
-    this.height = height;
-    this.width = width;
-  }
+  &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;height&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;height &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-  public int area() {
-    return height * width;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; height &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This is a class, with two &lt;em&gt;fields&lt;/em&gt;, a &lt;em&gt;constructor&lt;/em&gt;, and a method
 that makes use of both of those fields.&lt;/p&gt;
 &lt;p&gt;We can create a new &lt;em&gt;instance&lt;/em&gt; of this class, and call its methods
 as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;var rectangle = new Rectangle(3, 4);
-System.out.println(rectangle.area());
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This program prints out &lt;code&gt;12&lt;/code&gt;, because we call this rectangle&apos;s methods using
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; rectangle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rectangle&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This program prints out &lt;code class=&quot;language-text&quot;&gt;12&lt;/code&gt;, because we call this rectangle&apos;s methods using
 the data contained in its fields.&lt;/p&gt;
 &lt;p&gt;We can also make new classes which inherit from another;
 for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;class Square extends Rectangle {
-  public Square(width) {
-    super(width, width);
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Square&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Square&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This class can be used like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;var square = new Square(3);
-System.out.println(square.area());
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This program prints out &lt;code&gt;9&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Square&lt;/code&gt; class inherits all the methods and their implementations
-from its parent class &lt;code&gt;Rectangle&lt;/code&gt;, and can use its parent&apos;s constructor.
-This means that it already has all of &lt;code&gt;Rectangle&lt;/code&gt;&apos;s methods and their
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; square &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Square&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;square&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This program prints out &lt;code class=&quot;language-text&quot;&gt;9&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;Square&lt;/code&gt; class inherits all the methods and their implementations
+from its parent class &lt;code class=&quot;language-text&quot;&gt;Rectangle&lt;/code&gt;, and can use its parent&apos;s constructor.
+This means that it already has all of &lt;code class=&quot;language-text&quot;&gt;Rectangle&lt;/code&gt;&apos;s methods and their
 implementations from the start.&lt;/p&gt;
 &lt;p&gt;Classes can also change the implementation of certain methods. This
 is called &lt;em&gt;overriding&lt;/em&gt; in Java.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;  @Override
-  public int height() {
-    // new behavior
-  }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;  &lt;span class=&quot;token annotation punctuation&quot;&gt;@Override&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// new behavior&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Abstract Classes&lt;/h2&gt;
 &lt;p&gt;Java also has a feature called &lt;em&gt;abstract classes&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Abstract classes have one big difference from normal classes:
 they can choose not to provide an implementation for a given method.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;abstract class Shape {
-  abstract int height();
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  int heightSquared() {
-    var h = height();
-    return h * h;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We&apos;ve left the &lt;code&gt;height&lt;/code&gt; method abstract. We can&apos;t actually create
-instances of the &lt;code&gt;Shape&lt;/code&gt; class. Instead, we need to extend the class
+  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;heightSquared&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; h &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; h &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; h&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We&apos;ve left the &lt;code class=&quot;language-text&quot;&gt;height&lt;/code&gt; method abstract. We can&apos;t actually create
+instances of the &lt;code class=&quot;language-text&quot;&gt;Shape&lt;/code&gt; class. Instead, we need to extend the class
 with another, and then we can create instances of that &lt;em&gt;subclass&lt;/em&gt;.&lt;/p&gt;
 &lt;h2&gt;Interfaces&lt;/h2&gt;
 &lt;p&gt;Now that we&apos;ve seen classes, and then abstract classes, we
@@ -1151,32 +1114,29 @@ can move on to interfaces, as implemented in Java.&lt;/p&gt;
 &lt;p&gt;An interface is essentially an abstract class, where
 all the methods are abstract.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;interface ShapeLike {
-  int area();
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ShapeLike&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We can then have different classes that implement this interface:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;class Rectangle implements ShapeLike {
-  int area() {
-    return width * height;
-  }
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Rectangle&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ShapeLike&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; width &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-class Square implements ShapeLike {
-  int area() {
-    return width * width;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Square&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ShapeLike&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; width &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This can be used for polymorphism, by declaring a function that accepts
 an interface instead of a specific type:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;class ShapeUtils {
-   static int areaSquared(ShapeLike shape) {
-     var a = shape.area();
-     return a * a;
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ShapeUtils&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;areaSquared&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;ShapeLike&lt;/span&gt; shape&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; shape&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;(We make a class with a &lt;em&gt;static&lt;/em&gt; method because Java doesn&apos;t like free functions).&lt;/p&gt;
 &lt;p&gt;One key thing to notice here is that each class has to explicitly
 declare that it implements a given interface. There&apos;s no way to make
@@ -1193,35 +1153,34 @@ various classes implementing that interface may have.&lt;/p&gt;
 an interface is implicit, whereas in Java, this is explicit.&lt;/p&gt;
 &lt;p&gt;Continuing with our geometry examples, in Go we might have code
 that looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;package main
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; main
 
-import &quot;fmt&quot;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
 
-type Shape interface {
-  area() int
-}
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; Shape &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-type Square struct {
-  width int
-}
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; Square &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  width &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-func (s Square) area() int {
-  return s.width * s.width
-}
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s Square&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;width
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-func main() {
-  var s Shape
-  s = Square{width: 3}
-  fmt.Println(s.area())
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;(This is actually a complete Go program that can be run, and prints out &lt;code&gt;9&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;The first part of this program declares a new interface type, named &lt;code&gt;Shape&lt;/code&gt;.
-This interface is defined by the method &lt;code&gt;area&lt;/code&gt;. With the way interfaces
-work in Go, any type that has a method named &lt;code&gt;area&lt;/code&gt; with the right type signature
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; s Shape
+  s &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Square&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;width&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(This is actually a complete Go program that can be run, and prints out &lt;code class=&quot;language-text&quot;&gt;9&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;The first part of this program declares a new interface type, named &lt;code class=&quot;language-text&quot;&gt;Shape&lt;/code&gt;.
+This interface is defined by the method &lt;code class=&quot;language-text&quot;&gt;area&lt;/code&gt;. With the way interfaces
+work in Go, any type that has a method named &lt;code class=&quot;language-text&quot;&gt;area&lt;/code&gt; with the right type signature
 can be used as that interface. Later on in the program, we assign a value
-of type &lt;code&gt;Square&lt;/code&gt; to a variable of type &lt;code&gt;Shape&lt;/code&gt;. This is allowed because
-&lt;code&gt;Square&lt;/code&gt; has a method with the right name and types.&lt;/p&gt;
+of type &lt;code class=&quot;language-text&quot;&gt;Square&lt;/code&gt; to a variable of type &lt;code class=&quot;language-text&quot;&gt;Shape&lt;/code&gt;. This is allowed because
+&lt;code class=&quot;language-text&quot;&gt;Square&lt;/code&gt; has a method with the right name and types.&lt;/p&gt;
 &lt;p&gt;One downside of Java&apos;s interfaces is that old types cannot implement
 new interfaces. If we notice a behavior we want to abstract over,
 we can&apos;t make it work with existing types. Because Go has implicit interfaces,
@@ -1235,23 +1194,22 @@ traits function quite similarly to &lt;em&gt;Haskell&lt;/em&gt;&apos;s &lt;em&gt
 we&apos;ve seen so far is that in Rust, traits are implemented
 explicitly, but can be implemented for existing types.&lt;/p&gt;
 &lt;p&gt;Let&apos;s look at an example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;trait Shape {
-  fn area(&amp;#x26;self) -&gt; i32;
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;trait&lt;/span&gt; Shape &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-struct Square {
-  width: i32
-}
+&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Square &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  width&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-impl Shape for Square {
-   fn area(&amp;#x26;self) -&gt; i32 {
-     width * width
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;impl&lt;/span&gt; Shape &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; Square &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; i32 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+     width &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; width
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We&apos;ve seen a similar example a few times. This is very similar
 to the Go version, except that instead of implementing
-an &lt;code&gt;area&lt;/code&gt; method in the struct (which we can do in Rust), and
+an &lt;code class=&quot;language-text&quot;&gt;area&lt;/code&gt; method in the struct (which we can do in Rust), and
 then having the interface implementation be implicit, we have
 to explicitly implement that interface.&lt;/p&gt;
 &lt;p&gt;One advantage of explicit implementation is that the Rust
@@ -1371,7 +1329,7 @@ conjugated verbs. Naively splitting would use the form the verb happens to be
 conjugated in.&lt;/p&gt;
 &lt;p&gt;We then store the sentence in one table, and each word in that sentence in
 another. We then add a link in a junction table for each word. Each link
-specifies that a word &lt;code&gt;W&lt;/code&gt; appears in a sentence &lt;code&gt;S&lt;/code&gt;. This table is used to
+specifies that a word &lt;code class=&quot;language-text&quot;&gt;W&lt;/code&gt; appears in a sentence &lt;code class=&quot;language-text&quot;&gt;S&lt;/code&gt;. This table is used to
 represent the &lt;em&gt;many-to-many&lt;/em&gt; relationship between words and sentences.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;get&lt;/strong&gt; operation looks up the sentences containing a given word. This
 operation uses the junction table built up with the &lt;strong&gt;add&lt;/strong&gt; operation.
@@ -1392,29 +1350,27 @@ All we need to do is have a file for SQLite to work with.&lt;/p&gt;
 &lt;h1&gt;Table Structure&lt;/h1&gt;
 &lt;p&gt;In this section we&apos;ll go over what our database schema looks like.&lt;/p&gt;
 &lt;p&gt;We have a table for each word, and a table for each sentence:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;CREATE TABLE Words(
-    id INTEGER PRIMARY KEY,
-    word TEXT UNIQUE NOT NULL
-);
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; Words&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    id &lt;span class=&quot;token keyword&quot;&gt;INTEGER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    word &lt;span class=&quot;token keyword&quot;&gt;TEXT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-CREATE TABLE Sentences(
-    id INTEGER PRIMARY KEY,
-    sentence TEXT NOT NULL
-);
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; Sentences&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    id &lt;span class=&quot;token keyword&quot;&gt;INTEGER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    sentence &lt;span class=&quot;token keyword&quot;&gt;TEXT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Each table uses an integer as its primary key. Both tables then store text in
 the other column. We don&apos;t want to avoid storing duplicate words, so we add a
-&lt;code&gt;UNIQUE&lt;/code&gt; constraint to that column. To avoid errors, we need to make sure to
+&lt;code class=&quot;language-text&quot;&gt;UNIQUE&lt;/code&gt; constraint to that column. To avoid errors, we need to make sure to
 only insert new words into the table.&lt;/p&gt;
 &lt;p&gt;Next we have the junction table modelling the &lt;em&gt;many-to-many&lt;/em&gt; relationship:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;CREATE TABLE WordSentence(
-    word_id INTEGER NOT NULL,
-    sentence_id INTEGER NOT NULL,
-    PRIMARY KEY(word_id, sentence_id),
-    FOREIGN KEY(word_id) REFERENCES Words(id),
-    FOREIGN KEY(sentence_id) REFERENCES Sentences(id)
-);
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; WordSentence&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    word_id &lt;span class=&quot;token keyword&quot;&gt;INTEGER&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    sentence_id &lt;span class=&quot;token keyword&quot;&gt;INTEGER&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;word_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sentence_id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;FOREIGN&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;word_id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;REFERENCES&lt;/span&gt; Words&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;FOREIGN&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sentence_id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;REFERENCES&lt;/span&gt; Sentences&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This table only contains 2 columns, one referencing words, and the other
 referencing sentences. The rest of the schema makes sure that the keys inserted
 into the table come in unique pairs, and that they reference keys that exist in
@@ -1425,42 +1381,38 @@ sentence &quot;猫を見た&quot; contains the following words: 猫, を, and �
 past tense of 見る). Adding this sentence to an empty database will give us the
 following tables:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Words&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;id word
--- ----
-1  猫
-2  を
-3  見る
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;id word
+&lt;span class=&quot;token comment&quot;&gt;-- ----&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;  猫
+&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;  を
+&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;  見る&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Sentences&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;id sentence
--- --------
-1  猫を見た
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;id sentence
+&lt;span class=&quot;token comment&quot;&gt;-- --------&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;  猫を見た&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;WordSentence&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;word_id sentence_id
-------- -----------
-1       1
-2       1
-3       1
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;word_id sentence_id
+&lt;span class=&quot;token comment&quot;&gt;------- -----------&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;       &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;       &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;       &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For each word, we&apos;ve created a link in the junction table representing the word
 belonging to the first sentence in our newly populated sentence table.&lt;/p&gt;
 &lt;h2&gt;Big Scary Statements&lt;/h2&gt;
-&lt;p&gt;The trickiest statement to write was for the &lt;code&gt;get&lt;/code&gt; operation.
+&lt;p&gt;The trickiest statement to write was for the &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; operation.
 This statement needs to look up all the sentences containing a specific word.
 To do this we make use of the Junction table we previously populated,
 joining our sentences with the words they contain.
 Once we have a table of rows with a sentence and a word,
 we can filter for rows containing the right word, and take out the sentence.&lt;/p&gt;
 &lt;p&gt;The statement looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;SELECT sentence FROM sentences
-LEFT JOIN wordsentence ON wordsentence.sentence_id = sentences.id
-LEFT JOIN words ON words.id = wordsentence.word_id
-WHERE word=?1;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; sentence &lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; sentences
+&lt;span class=&quot;token keyword&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;JOIN&lt;/span&gt; wordsentence &lt;span class=&quot;token keyword&quot;&gt;ON&lt;/span&gt; wordsentence&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sentence_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; sentences&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id
+&lt;span class=&quot;token keyword&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;JOIN&lt;/span&gt; words &lt;span class=&quot;token keyword&quot;&gt;ON&lt;/span&gt; words&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; wordsentence&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;word_id
+&lt;span class=&quot;token keyword&quot;&gt;WHERE&lt;/span&gt; word&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;?&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I think we could have used an &lt;em&gt;Inner Join&lt;/em&gt; as well,
 but since we’re checking with equality on a word,
-the &lt;code&gt;NULL&lt;/code&gt;s that appear because of a &lt;em&gt;Left Join&lt;/em&gt; don’t matter.&lt;/p&gt;
+the &lt;code class=&quot;language-text&quot;&gt;NULL&lt;/code&gt;s that appear because of a &lt;em&gt;Left Join&lt;/em&gt; don’t matter.&lt;/p&gt;
 &lt;h1&gt;Disks are slow&lt;/h1&gt;
 &lt;p&gt;On the first iteration of the program, consuming sentences was very slow:
 the program was only capable of adding 3 sentences per second or so.
@@ -1482,12 +1434,12 @@ Ginkou can consume Japanese sentences from the command line, or from a…]]></de
 file, parse those sentences into words, and then index those sentences for
 easy retrieval. Given a word, &lt;strong&gt;Ginkou&lt;/strong&gt; can look up sentences containing
 that word, even if it&apos;s in a different form, such as a conjugated verb.&lt;/p&gt;
-&lt;!--more--&gt;</content:encoded></item><item><title><![CDATA[Data Races vs Race Conditions]]></title><description><![CDATA[This is a quick post about the difference between Data Races and
-Race Conditions, and how data structures or patterns providing freedom
-from…]]></description><link>https://cronokirby.github.io/posts/data-races-vs-race-conditions/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/data-races-vs-race-conditions/</guid><pubDate>Fri, 14 Jun 2019 18:15:10 GMT</pubDate><content:encoded>&lt;p&gt;This is a quick post about the difference between &lt;code&gt;Data Races&lt;/code&gt; and
-&lt;code&gt;Race Conditions&lt;/code&gt;, and how data structures or patterns providing freedom
+&lt;!--more--&gt;</content:encoded></item><item><title><![CDATA[Data Races vs Race Conditions]]></title><description><![CDATA[This is a quick post about the difference between  and
+, and how data structures or patterns providing freedom
+from data races can fail to…]]></description><link>https://cronokirby.github.io/posts/data-races-vs-race-conditions/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/data-races-vs-race-conditions/</guid><pubDate>Fri, 14 Jun 2019 18:15:10 GMT</pubDate><content:encoded>&lt;p&gt;This is a quick post about the difference between &lt;code class=&quot;language-text&quot;&gt;Data Races&lt;/code&gt; and
+&lt;code class=&quot;language-text&quot;&gt;Race Conditions&lt;/code&gt;, and how data structures or patterns providing freedom
 from data races can fail to provide race condition freedom.&lt;/p&gt;
-&lt;p&gt;The examples will be given in &lt;code&gt;Go&lt;/code&gt;, since that&apos;s a language with a few
+&lt;p&gt;The examples will be given in &lt;code class=&quot;language-text&quot;&gt;Go&lt;/code&gt;, since that&apos;s a language with a few
 of the concurrent constructs that come into play here, as well as the language
 that sparked this blog post in the first place.&lt;/p&gt;
 &lt;h2&gt;Data Races&lt;/h2&gt;
@@ -1498,68 +1450,63 @@ access a location in memory / variable, at least one of which is a write,
 and at least one of which is not synchronized with other threads.&lt;/p&gt;
 &lt;p&gt;For example, multiple concurrent reads to an unsychronized variable are perfectly
 fine:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;const a = 3
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
 
-func main() {
-    go func() {
-        fmt.Printf(&quot;Thread B: %d\n&quot;, a)
-    }
-    fmt.Printf(&quot;Thread A: %d\n&quot;, a)
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Thread B: %d\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Thread A: %d\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Even though the order of printing will vary from execution to execution,
 there are no data races since both threads are merely reading from the data.&lt;/p&gt;
-&lt;p&gt;If we now have one of the threads access &lt;code&gt;a&lt;/code&gt; mutably, we introduce a data race:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func main() {
-    a := 3
-    go func() {
-        a = 10
-    }
-    fmt.Printf(&quot;Thread A: %d\n&quot;, a)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We can solve this by introducing a mutex to synchronize access to &lt;code&gt;a&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func main() {
-    a := 3
-    var m sync.Mutex
-    go func() {
-        m.Lock()
-        a = 10
-        m.Unlock()
-    }
-    m.Lock()
-    fmt.Printf(&quot;Thread A: %d\n&quot;, a)
-    m.Unlock()
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Both threads are accessing &lt;code&gt;a&lt;/code&gt; at the same time, and one of them is writing,
+&lt;p&gt;If we now have one of the threads access &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt; mutably, we introduce a data race:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    a &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Thread A: %d\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can solve this by introducing a mutex to synchronize access to &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    a &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; m sync&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Mutex
+    &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
+        m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Unlock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Thread A: %d\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Unlock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Both threads are accessing &lt;code class=&quot;language-text&quot;&gt;a&lt;/code&gt; at the same time, and one of them is writing,
 but since the access is synchronized, this is no longer a data race.&lt;/p&gt;
 &lt;h2&gt;Race Conditions&lt;/h2&gt;
-&lt;p&gt;Race conditions stem from &lt;code&gt;non-determinism&lt;/code&gt; in concurrent programs.
+&lt;p&gt;Race conditions stem from &lt;code class=&quot;language-text&quot;&gt;non-determinism&lt;/code&gt; in concurrent programs.
 In theory any observable non-determinism from concurrency could be &lt;em&gt;considered&lt;/em&gt;
 a race condition, but in practice what constitutes a race condition depends
 on what properties we want our program to respect.&lt;/p&gt;
 &lt;p&gt;Let&apos;s take the following program as an example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func main() {
-    go func() {
-        for {
-            fmt.Println(&quot;Thread B&quot;)
-        }
-    }
-    for {
-        fmt.Println(&quot;Thread A&quot;)
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Thread B&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Thread A&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We&apos;ll see some sort of random interleaving of the two messages:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Thread A
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Thread A
 Thread A
 Thread B
 Thread A
 Thread B
 Thread B
-...
-&lt;/code&gt;&lt;/pre&gt;
+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This could be considered a race condition, if the exact order of the printing
 was a property we wanted our program to respect. We could use some form of
 synchronization to enforce that order of printing.&lt;/p&gt;
@@ -1577,86 +1524,79 @@ write a program that has a race condition despite only using channels.&lt;/p&gt;
 &lt;p&gt;In this example, we&apos;ll have a simple server responding to requests to get
 the value of an integer, and to set the value of an integer.&lt;/p&gt;
 &lt;p&gt;The messages look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;type msg struct {
-    id int
-    amount int
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We&apos;ll use &lt;code&gt;0&lt;/code&gt; as the id for &lt;code&gt;get&lt;/code&gt; and &lt;code&gt;1&lt;/code&gt; as the id for &lt;code&gt;set&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; msg &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    id &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;
+    amount &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We&apos;ll use &lt;code class=&quot;language-text&quot;&gt;0&lt;/code&gt; as the id for &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;1&lt;/code&gt; as the id for &lt;code class=&quot;language-text&quot;&gt;set&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Our server type will look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;type server struct {
-  msgs chan msg
-  resps chan int
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; server &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  msgs &lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; msg
+  resps &lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-func newServer() *server {
-  msgs := make(chan msg)
-  resps := make(chan int)
-  return &amp;#x26;server{msgs, resps}
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;newServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;server &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  msgs &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; msg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  resps &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;msgs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; resps&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We have a channel to be able to send and receive messages for the server,
 as well as a channel for the responses to those messages.&lt;/p&gt;
 &lt;p&gt;Our server will start in the background with the following function:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func (s *server) start() {
-  state := 0
-  for {
-    m := &amp;#x3C;-s.msgs;
-    if m.id == 0 {
-      s.resps &amp;#x3C;- state
-    } else {
-      state = m.amount
-    }
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  state &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    m &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;msgs&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;resps &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt; state
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;amount
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We respond to get requests by sending back the current state, and to set requests
 by setting the concurrent state. Since only one thread is in control
 of the state, interactions with the server are free from data races.&lt;/p&gt;
 &lt;p&gt;The basic operations with our server look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func (s *server) get() int {
-  s.msgs &amp;#x3C;- msg{0, 0}
-  return &amp;#x3C;-s.resps
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;msgs &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt; msg&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;resps
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-func (s *server) set(amount int) {
-  s.msgs &amp;#x3C;- msg{1, amount}
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;amount &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;msgs &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt; msg&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; amount&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now with those basic operations, we can define the following function:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func (s *server) increment() {
-  x := s.get()
-  s.set(x + 1)
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  x &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This function simply increments the state.&lt;/p&gt;
 &lt;p&gt;In our main function, we can do the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func main() {
-  s := newServer()
-  go s.start()
-  for i := 0; i &amp;#x3C; 200; i++ {
-      s.increment()
-  }
-  fmt.Println(s.get())
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  s &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;newServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will perform 200 increment operations, leaving the state at 200, as expected.&lt;/p&gt;
 &lt;p&gt;But if we start sharing these operations between threads, we&apos;ll notice
 a race condition:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func main() {
-  s := newServer()
-  go s.start()
-  go func() {
-      for i := 0; i &amp;#x3C; 100; i++ {
-          s.increment()
-      }
-  }
-  for i := 0; i &amp;#x3C; 100; i++ {
-      s.increment()
-  }
-  fmt.Println(s.get())
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  s &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;newServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We would expect to see 200, as before, but in practice we&apos;ll see a smaller number.
 This is a race condition. This happens because 2 threads can get the same value
 before setting the next one, and then both will set the same value, leading
@@ -1667,17 +1607,15 @@ An atomic increment would mean that each increment happens as a single step,
 and thus prevent two concurrent increments from only leading to a single
 operation.&lt;/p&gt;
 &lt;p&gt;We could add such an operation to our server with an additional message,
-let&apos;s say with id &lt;code&gt;2&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;else if m.id == 2 {
-    state++
-}
-&lt;/code&gt;&lt;/pre&gt;
+let&apos;s say with id &lt;code class=&quot;language-text&quot;&gt;2&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; m&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    state&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The problem is that the following function still wouldn&apos;t be atomic:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;func (s *server) doubleIncrement() {
-    s.increment()
-    s.increment()
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;doubleIncrement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;No matter what set of atomic operations our server provides for its state,
 we can&apos;t simply perform multiple operations in sequence, in an unsynchronized
 manner, and expect the result to also be atomic.&lt;/p&gt;
@@ -1703,41 +1641,38 @@ and ended up finding the causes of the audio bugs.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/rust-lang/rust-clippy&quot;&gt;clippy&lt;/a&gt;
 on the entire codebase, and found quite a few issues. The main issue had
 to do with a clippy warning for up-casts like:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rs&quot;&gt;let x: u8;
-x as u16;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rs&quot;&gt;&lt;pre class=&quot;language-rs&quot;&gt;&lt;code class=&quot;language-rs&quot;&gt;let x: u8;
+x as u16;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Clippy doesn&apos;t like this because it can introduce implicit truncation if
-the type of &lt;code&gt;x&lt;/code&gt; ever grew larger. These types of casts appear very frequently
+the type of &lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; ever grew larger. These types of casts appear very frequently
 throughout the emulator.&lt;/p&gt;
 &lt;p&gt;That being said, clippy actually did find the bugs in the APU causing the audio
 glitches:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rs&quot;&gt;if x &amp;#x26; 040 == 0x40
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rs&quot;&gt;&lt;pre class=&quot;language-rs&quot;&gt;&lt;code class=&quot;language-rs&quot;&gt;if x &amp;amp; 040 == 0x40&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This code was flagged as being an impossible check, rightly so. There were a handful
 of issues like this in the APU causing weird behavior, fixing all the clippy
 checks thankfully solved all the audio issues.&lt;/p&gt;
 &lt;p&gt;After cleaning up the emulator, and fixing these audio bugs after so long,
 I decided to go ahead and work on one of the mappers I hadn&apos;t added yet.
-I added &lt;code&gt;iNES1&lt;/code&gt; which is the mapper used for games like
-&lt;code&gt;Zelda&lt;/code&gt; and &lt;code&gt;Final Fantasy&lt;/code&gt;.&lt;/p&gt;
+I added &lt;code class=&quot;language-text&quot;&gt;iNES1&lt;/code&gt; which is the mapper used for games like
+&lt;code class=&quot;language-text&quot;&gt;Zelda&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;Final Fantasy&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;At that point I wanted to experiment with different audio and video backends,
 although I ended up sticking with &lt;a href=&quot;https://crates.io/crates/minifb&quot;&gt;minifb&lt;/a&gt;
 for video, and &lt;a href=&quot;https://crates.io/crates/cpal&quot;&gt;cpal&lt;/a&gt; for audio.&lt;/p&gt;
 &lt;p&gt;To make that easier, I ended up creating traits for the video and audio devices,
 and made the core logic of the emulator depend on traits, instead of the
 concrete video and audio structs that were needed:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rs&quot;&gt;trait VideoDevice {
-    fn blit_pixels(&amp;#x26;mut self, pixels: &amp;#x26;PixelBuffer)
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rs&quot;&gt;&lt;pre class=&quot;language-rs&quot;&gt;&lt;code class=&quot;language-rs&quot;&gt;trait VideoDevice {
+    fn blit_pixels(&amp;amp;mut self, pixels: &amp;amp;PixelBuffer)
 }
 
 trait AudioDevice {
-    fn push_sample(&amp;#x26;mut self, sample: f32)
-}
-&lt;/code&gt;&lt;/pre&gt;
+    fn push_sample(&amp;amp;mut self, sample: f32)
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At that point I realised that the core of the emulator could be split off from
 the rest of the crate that depended on specific backend logic. The core logic
 crate doesn&apos;t even have any dependencies, which is very nice. It could possibly
-work with &lt;code&gt;#[no_std]&lt;/code&gt; but I haven&apos;t looked into that at all.&lt;/p&gt;
+work with &lt;code class=&quot;language-text&quot;&gt;#[no_std]&lt;/code&gt; but I haven&apos;t looked into that at all.&lt;/p&gt;
 &lt;p&gt;The application you can use to play games is available
 &lt;a href=&quot;https://github.com/cronokirby/ludus-emu&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The standalone crate can be used to create your own NES emulator applications,
@@ -1791,45 +1726,38 @@ say, a &lt;em&gt;logger&lt;/em&gt;, for example, along with a concrete module, a
 &lt;p&gt;Let&apos;s use our logger example more fully. Our project needs a component
 responsible for logging things to a file. We can send messages for it a log across a queue,
 and it has a file that it logs to.&lt;/p&gt;
-&lt;p&gt;First we&apos;d create a module to contain this, say &lt;code&gt;Logger.hs&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;module Logger () where
--- imports ommitted
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First we&apos;d create a module to contain this, say &lt;code class=&quot;language-text&quot;&gt;Logger.hs&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- imports ommitted&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The next step is to define a type that contains all the information the logger needs to run:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;data LoggerInfo = LoggerInfo
-    { loggerQueue :: TBQueue Message
-    , loggerFile  :: FilePath
-    }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerInfo&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerInfo&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;loggerQueue&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;TBQueue&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Message&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;loggerFile&lt;/span&gt;  &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;FilePath&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then we create a new effect type, which is just a Reader with access to that information:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;newtype LoggerM a = LoggerM (ReaderT LoggerInfo IO a)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now inside the module itself, we write the functions we need as &lt;code&gt;LoggerM a&lt;/code&gt;, for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;latestMessage :: LoggerM Message
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;newtype&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerM&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerM&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ReaderT&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerInfo&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now inside the module itself, we write the functions we need as &lt;code class=&quot;language-text&quot;&gt;LoggerM a&lt;/code&gt;, for example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token hvariable&quot;&gt;latestMessage&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerM&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Message&lt;/span&gt;
 
-logMessages :: LoggerM ()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token hvariable&quot;&gt;logMessages&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerM&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We also have a main function that contains all the things a component needs to do, sort of like
 a &quot;main loop&quot; for that component:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;main :: LoggerM ()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token hvariable&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerM&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At this point we have the tools to express functions for that component inside the module itself,
 but no API to interact with the component from outside. We have 2 options for exposing this
 component to the outside world.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Export &lt;code&gt;LoggerInfo&lt;/code&gt; and &lt;code&gt;LoggerM&lt;/code&gt;, as well as &lt;code&gt;main&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Export &lt;code class=&quot;language-text&quot;&gt;LoggerInfo&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;LoggerM&lt;/code&gt;, as well as &lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We&apos;d have functions to construct &lt;code&gt;LoggerInfo&lt;/code&gt; as well as run &lt;code&gt;LoggerM&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;makeLoggerInfo :: File -&gt; IO LoggerInfo
+&lt;p&gt;We&apos;d have functions to construct &lt;code class=&quot;language-text&quot;&gt;LoggerInfo&lt;/code&gt; as well as run &lt;code class=&quot;language-text&quot;&gt;LoggerM&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token hvariable&quot;&gt;makeLoggerInfo&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerInfo&lt;/span&gt;
 
-runLoggerM :: LoggerM a -&gt; LoggerInfo -&gt; IO a
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token hvariable&quot;&gt;runLoggerM&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerM&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;LoggerInfo&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;a&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;Completely hide the existence of &lt;code&gt;LoggerInfo&lt;/code&gt; and &lt;code&gt;LoggerM&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Completely hide the existence of &lt;code class=&quot;language-text&quot;&gt;LoggerInfo&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;LoggerM&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;With this choice, we&apos;d only export a function that constructs and runs the main logger computation:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;runLoggerMain :: File -&gt; IO ()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token hvariable&quot;&gt;runLoggerMain&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Regardless of which choice we make, we&apos;re free to start the logger component in a new thread if we want.
 This is usually done, because components generally contain independent pieces of state, and spend all their time
 doing the same thing over and over, rather than acting as a one time task.&lt;/p&gt;
@@ -1838,16 +1766,15 @@ Users of the component can ignore the implementation details of the component co
 function in a new thread after passing it all the prerequisite information.&lt;/p&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In summary, the component pattern looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-hs&quot;&gt;module Component (startComponent) where
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;hs&quot;&gt;&lt;pre class=&quot;language-hs&quot;&gt;&lt;code class=&quot;language-hs&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token hvariable&quot;&gt;startComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt;
 
-data ComponentInfo
+&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ComponentInfo&lt;/span&gt;
 
-newtype ComponentM a = ComponentM (ReaderT ComponentInfo IO a)
+&lt;span class=&quot;token keyword&quot;&gt;newtype&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ComponentM&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ComponentM&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ReaderT&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ComponentInfo&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-main :: ComponentM ()
+&lt;span class=&quot;token hvariable&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ComponentM&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-startComponent :: Dependencies -&gt; IO ()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token hvariable&quot;&gt;startComponent&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Dependencies&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This isn&apos;t the end-all-be-all of organising stateful components of a larger project,
 but hopefully this is a useful pattern to put in the toolbox :)&lt;/p&gt;
 &lt;h2&gt;Further Reading&lt;/h2&gt;
@@ -1882,8 +1809,8 @@ the parts they have to the other peers that want those parts.&lt;/p&gt;
 &lt;p&gt;A &lt;strong&gt;torrent&lt;/strong&gt; refers to this group of peers sharing a file.&lt;/p&gt;
 &lt;h2&gt;Torrents and Pieces&lt;/h2&gt;
 &lt;p&gt;A torrent can contain either a single file, or multiple files. When a torrent contains multiple files,
-it can optionally contain a root directory for those files. For example, &lt;code&gt;blockbuster.torrent&lt;/code&gt; might
-contain a single &lt;code&gt;blockbuster.mp4&lt;/code&gt; file, or perhaps &lt;code&gt;blockbuster.mp4, blockbuster.subtitles&lt;/code&gt; in a &lt;code&gt;blockbuster&lt;/code&gt; folder.&lt;/p&gt;
+it can optionally contain a root directory for those files. For example, &lt;code class=&quot;language-text&quot;&gt;blockbuster.torrent&lt;/code&gt; might
+contain a single &lt;code class=&quot;language-text&quot;&gt;blockbuster.mp4&lt;/code&gt; file, or perhaps &lt;code class=&quot;language-text&quot;&gt;blockbuster.mp4, blockbuster.subtitles&lt;/code&gt; in a &lt;code class=&quot;language-text&quot;&gt;blockbuster&lt;/code&gt; folder.&lt;/p&gt;
 &lt;p&gt;I mentioned previously that peers trade &quot;parts&quot; of a file. Instead of considering each peer as either having
 the entire file, or not having it, and then downloading from those that have the &lt;strong&gt;whole&lt;/strong&gt; file, we divide the file
 into parts. We call these parts &lt;strong&gt;pieces&lt;/strong&gt;. At any given point in time, we know which peers have which pieces (or at least, claim to), and what
@@ -1897,16 +1824,14 @@ how big the pieces are: this is a single number specifying how big each piece is
 &lt;p&gt;&lt;strong&gt;Complication: All pieces are the same size, except for the last one.&lt;/strong&gt;
 Let me illustrate this problem with an example. Let&apos;s say our piece size is 2 bytes, and our torrent contains 5 bytes
 in total (let&apos;s skim over how this data is divided into files for now). Our data is divided like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;xx xx x
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;xx xx x&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The first 2 pieces have the announced size, 2 bytes, but the last piece has to be whatever size necessary to &quot;plug in&quot;
 the end of the data.&lt;/p&gt;
 &lt;p&gt;This is just an edge case to worry about, and not as tricky as the next complication:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Complication: Pieces don&apos;t belong to one file&lt;/strong&gt;
 Let&apos;s continue using the same example as the previous complication, but further specify that the torrent actually
 contains 2 files: A.png B.png. A is 3 bytes, and B 2 bytes. Our data would now look like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;AA AB B
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;AA AB B&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The second piece now contains data from 2 different files!&lt;/p&gt;
 &lt;p&gt;This is because, as far as pieces are concerned, the torrent is just a binary blob. When peers are trading
 pieces it&apos;s as if the torrent just contained a single file. In fact, in the case of a single file, we don&apos;t have this
@@ -1917,8 +1842,7 @@ This means that a piece may actually contain data belonging to an arbitrary of f
 common for a piece to overlap many files. Because movies, which are large, often come with subtitles, which are relatively
 much smaller, the piece size we use for those torrents are usually larger than the size of all the subtitles combined.
 It&apos;s not uncommon for a single piece to actually contain all of the subtitles as well as a chunk of the movie itself:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;ABCDEFGHIJXXXXXXXX XXXXX...
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;ABCDEFGHIJXXXXXXXX XXXXX...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;What our algorithm needs to do&lt;/h2&gt;
 &lt;p&gt;Now we get to the crux of this post: the algorithm for saving and retrieving pieces.&lt;/p&gt;
 &lt;p&gt;We can break down what we do with pieces into 3 seperate tasks:&lt;/p&gt;
@@ -1956,14 +1880,13 @@ recomposition step, since we&apos;re always working with the files themselves. T
 of figuring out which sections of which files to write to is quite complicated.&lt;/p&gt;
 &lt;p&gt;Another approach, which is the one I chose, is instead to use as many files as convenient, and then
 recompose them together as a final step. For example, instead of trying to figure out where &quot;piece #38&quot;
-needs to go, we just save it in &lt;code&gt;piece-38.bin&lt;/code&gt; and worry about recomposing it later.&lt;/p&gt;
+needs to go, we just save it in &lt;code class=&quot;language-text&quot;&gt;piece-38.bin&lt;/code&gt; and worry about recomposing it later.&lt;/p&gt;
 &lt;p&gt;We identify the following cases for how we save pieces:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The piece belongs completely into a single file:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;..xx xxxx xx..
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In this case we save &lt;code&gt;piece #N&lt;/code&gt; to &lt;code&gt;piece-N.bin&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;..xx xxxx xx..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this case we save &lt;code class=&quot;language-text&quot;&gt;piece #N&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;piece-N.bin&lt;/code&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The piece belongs to multiple files:&lt;/li&gt;
 &lt;/ul&gt;
@@ -1972,23 +1895,20 @@ files the piece belongs to. What these files are named depends on the following:
 &lt;ul&gt;
 &lt;li&gt;If a file fits completely into a piece:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;xxAAAyy
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;xxAAAyy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;If the piece contains the first bytes of a file&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;..xx xxAA AA..
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then we save the data for that file in &lt;code&gt;file.start&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;..xx xxAA AA..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then we save the data for that file in &lt;code class=&quot;language-text&quot;&gt;file.start&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Note that we could seperate
 this into 2 cases, but as we&apos;ll see later, not distinguishing these cases changes nothing in the end,
 and makes the algorithm simpler.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;If the piece contains the last bytes of a file:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;..AA AAxx xx..
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then we save the data for that file in &lt;code&gt;file.end&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;..AA AAxx xx..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then we save the data for that file in &lt;code class=&quot;language-text&quot;&gt;file.end&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Data Structures and Algorithms&lt;/h2&gt;
 &lt;p&gt;For each of these algorithms, our life is made much easier if we calculate a nicer representation
 of the file structure before hand. That is to say, we&apos;ll have a special representation of our
@@ -1997,64 +1917,58 @@ used for reading back the pieces.&lt;/p&gt;
 &lt;h3&gt;Recomposing: Data Structure&lt;/h3&gt;
 &lt;p&gt;The data structure for recomposing pieces together is pretty simple, for each final file in
 the torrent, we keep a list of all its dependencies. That is to say, all the pieces that fit completly
-into it, as well as all &lt;code&gt;file.end&lt;/code&gt; and &lt;code&gt;file.start&lt;/code&gt; if those exist.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;data Recompose = Recompose [(File, [File])]
-&lt;/code&gt;&lt;/pre&gt;
+into it, as well as all &lt;code class=&quot;language-text&quot;&gt;file.end&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;file.start&lt;/code&gt; if those exist.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;haskell&quot;&gt;&lt;pre class=&quot;language-haskell&quot;&gt;&lt;code class=&quot;language-haskell&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Recompose&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Recompose&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;To make our algorithm easier, we want to make sure that the dependencies are in the same order as
 they are in the file, so we can reconstruct the file by writing all dependencies in order.&lt;/p&gt;
 &lt;h3&gt;Recomposing: Algorithm&lt;/h3&gt;
 &lt;p&gt;The algorithm for recomposition is so simple, that we might as well already get it out of the way.
 This also illustrates the benefit of this approach of using the most suitable data structure for
 implementing our algorithms.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;recompose (Recompose mappings) =
-    forM_ mappings $ \(file, deps) -&gt; do
-        when (allFilesExist deps) $ do
-            writeAllTo deps file
-            removeAll deps
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;haskell&quot;&gt;&lt;pre class=&quot;language-haskell&quot;&gt;&lt;code class=&quot;language-haskell&quot;&gt;&lt;span class=&quot;token hvariable&quot;&gt;recompose&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Recompose&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;mappings&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;token hvariable&quot;&gt;forM_&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;mappings&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token hvariable&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;deps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+        &lt;span class=&quot;token hvariable&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token hvariable&quot;&gt;allFilesExist&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;deps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+            &lt;span class=&quot;token hvariable&quot;&gt;writeAllTo&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;deps&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;file&lt;/span&gt;
+            &lt;span class=&quot;token hvariable&quot;&gt;removeAll&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;deps&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For each file, we check if all its dependencies have already been written to,
 in which case we can reconstruct the file by concatenating all the dependencies.&lt;/p&gt;
 &lt;h3&gt;Saving: Data Structure&lt;/h3&gt;
 &lt;p&gt;In order to save each piece, we need to know which files the piece maps to,
 and how many bytes are in each piece. Our data structure thus looks like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;data SavePieces = SavePieces (Piece -&gt; [(Int, File)])
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This contains a list of &lt;code&gt;(count, file)&lt;/code&gt; tuples, listing the
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;haskell&quot;&gt;&lt;pre class=&quot;language-haskell&quot;&gt;&lt;code class=&quot;language-haskell&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;SavePieces&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;SavePieces&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Piece&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This contains a list of &lt;code class=&quot;language-text&quot;&gt;(count, file)&lt;/code&gt; tuples, listing the
 files the piece needs to be saved into, in the order they appear, as well
 as how many bytes of the piece should be saved in that file.&lt;/p&gt;
 &lt;h3&gt;Saving: Algorithm&lt;/h3&gt;
 &lt;p&gt;This algorithm is better expressed using an imperative formulation,
 but a functional fold would be able to accomplish the same thing:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-py&quot;&gt;def save(piece, mappings):
-    bits = mappings(piece)
-    offset = 0
-    for (count, file) in bits:
-        write(file, piece[offset:offset+count])
-        offset += count
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;py&quot;&gt;&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;piece&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; mappings&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    bits &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mappings&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;piece&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    offset &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; bits&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        write&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; piece&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;offset&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;offset&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        offset &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; count&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We just go linearly through each of the files, and save the right amount of the piece.
 For this to work correctly, we need to make sure that the order of the files and counts
 is correct, otherwise we&apos;ll be saving the wrong part of the piece.&lt;/p&gt;
 &lt;h3&gt;Reading: Data Structure&lt;/h3&gt;
 &lt;p&gt;The main complexity with reading pieces from disk, is that the piece may be in different locations,
 at different times. At the start, a piece might be in different standalone files, some of which get merged
-into a larger file. For example, a piece might map to &lt;code&gt;B.end&lt;/code&gt; and &lt;code&gt;A.start&lt;/code&gt;, in which case we need to know
-to read from &lt;code&gt;B.end&lt;/code&gt; if it exists, otherwise from the right spot in &lt;code&gt;B&lt;/code&gt;, and the same with &lt;code&gt;A&lt;/code&gt;. Note that
+into a larger file. For example, a piece might map to &lt;code class=&quot;language-text&quot;&gt;B.end&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;A.start&lt;/code&gt;, in which case we need to know
+to read from &lt;code class=&quot;language-text&quot;&gt;B.end&lt;/code&gt; if it exists, otherwise from the right spot in &lt;code class=&quot;language-text&quot;&gt;B&lt;/code&gt;, and the same with &lt;code class=&quot;language-text&quot;&gt;A&lt;/code&gt;. Note that
 it might be the case that B is saved, but A is not, and vice versa.&lt;/p&gt;
 &lt;p&gt;Let&apos;s start with a mapping from each piece to the locations it&apos;s stored in:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;data ReadPieces = ReadPieces (Piece -&gt; [Location])
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;haskell&quot;&gt;&lt;pre class=&quot;language-haskell&quot;&gt;&lt;code class=&quot;language-haskell&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ReadPieces&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ReadPieces&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Piece&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Location&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now, a location where a piece can be must contain both the small file containing just information for that piece,
 and then the large file where the piece will eventually be embedded.&lt;/p&gt;
 &lt;p&gt;Thus, we have:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;data Location = Location Embedded Complete
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;haskell&quot;&gt;&lt;pre class=&quot;language-haskell&quot;&gt;&lt;code class=&quot;language-haskell&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Location&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Location&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Embedded&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Complete&lt;/span&gt;
 
-type Offset = Int
-type Count = Int
-data Embedded = Embedded File Offset Count
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Offset&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Int&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Count&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Int&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Embedded&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Embedded&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Offset&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Count&lt;/span&gt;
 
-data Complete = Complete File
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Complete&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Complete&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;File&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The embedded location contains the file, as well as the offset and count,
 allowing us to easily read the piece from the larger file. For the complete location,
 we can just read that section by reading the entire small file.&lt;/p&gt;
@@ -2066,16 +1980,15 @@ need to be able to read pieces in order to upload parts of the file to other pie
 &lt;h3&gt;Reading: Algorithm&lt;/h3&gt;
 &lt;p&gt;The algorithm can be given now that we&apos;ve seen a good way to organise the data for this
 task:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;read (ReadPieces mapping) piece =
-    concatBS . forM (mapping piece) $ \l -&gt; do
-        let Location e c = l
-            Embedded fileE offset count = e
-            Complete fileC = c
-        complete &amp;#x3C;- fileExists fileC
-        if complete
-            then readAll fileC
-            else readAt offset count fileE
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;haskell&quot;&gt;&lt;pre class=&quot;language-haskell&quot;&gt;&lt;code class=&quot;language-haskell&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;read&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;ReadPieces&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;mapping&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;piece&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;token hvariable&quot;&gt;concatBS&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt; . &lt;/span&gt;&lt;span class=&quot;token hvariable&quot;&gt;forM&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token hvariable&quot;&gt;mapping&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;piece&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;token hvariable&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Location&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;l&lt;/span&gt;
+            &lt;span class=&quot;token constant&quot;&gt;Embedded&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;fileE&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;e&lt;/span&gt;
+            &lt;span class=&quot;token constant&quot;&gt;Complete&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;fileC&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;c&lt;/span&gt;
+        &lt;span class=&quot;token hvariable&quot;&gt;complete&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;fileExists&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;fileC&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;complete&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;readAll&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;fileC&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;readAt&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;offset&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;token hvariable&quot;&gt;fileE&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We can safely assume that if the smaller, but complete, location no longer exists,
 then this can only be because the larger file now does. We just concatenate the bytes
 for each section of the piece, which we first try and read from the complete file, if it exists,
@@ -2159,15 +2072,14 @@ doesn&apos;t have any visible side effects, but still using mutability as an imp
 &lt;h2&gt;A small example&lt;/h2&gt;
 &lt;p&gt;To illustrate a situation where a declarative decomposition of a problem ends up yielding a more obtuse implementation.
 Let&apos;s try implementing a prime sieve in python. The goal of this function is to return a list of the prime numbers up to a max value.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-py&quot;&gt;from itertools import reduce
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;py&quot;&gt;&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; itertools &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;reduce&lt;/span&gt;
 
-def primes(mx):
-    return reduce(lambda l, x: l if any(map(lambda d: x % d == 0, l)) else l + [x], range(2, mx))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now this is a somewhat contrived way of doing it, since &lt;code&gt;reduce&lt;/code&gt; begs for an imperative implementation,
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;lambda&lt;/span&gt; l&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; l &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;lambda&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; d &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; l&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; l &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; mx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now this is a somewhat contrived way of doing it, since &lt;code class=&quot;language-text&quot;&gt;reduce&lt;/code&gt; begs for an imperative implementation,
 but this is a pretty easy way of doing this in a purely declarative way. As expected,
 this function has no visible side effects, and depends only on the parameters passed to it.&lt;/p&gt;
-&lt;p&gt;The only downside is that for people not familiar with &lt;code&gt;reduce&lt;/code&gt; or with FP in python more generally,
+&lt;p&gt;The only downside is that for people not familiar with &lt;code class=&quot;language-text&quot;&gt;reduce&lt;/code&gt; or with FP in python more generally,
 this isn&apos;t the easiest function to understand. And even for a person quite familiar with declarative code,
 it isn&apos;t clear to follow the execution of this code.&lt;/p&gt;
 &lt;p&gt;One reason for this, is that reduce introduces a bit of imperative control flow, but in a declarative way.
@@ -2176,17 +2088,16 @@ in languages that aren&apos;t as purely functional, such as python in our case. 
 less clear than an imperative version of the same code.&lt;/p&gt;
 &lt;h2&gt;Back to imperative&lt;/h2&gt;
 &lt;p&gt;Let&apos;s try the code again in an imperative form:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-py&quot;&gt;def primes(mx):
-    acc = []
-    for x in range(2, mx):
-        found = False
-        for d in acc:
-            if x % d == 0:
-                found = True
-        if not found:
-            acc.append(x)
-    return acc
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;py&quot;&gt;&lt;pre class=&quot;language-py&quot;&gt;&lt;code class=&quot;language-py&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    acc &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; x &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; mx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        found &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; d &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; acc&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; d &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                found &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; found&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            acc&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;append&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; acc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We no longer have a single line, but we have an easier to follow function. This is more or less just an unrolling of
 the previous function, making all the underlying functions explicit, instead of composed together.
 The important thing is that all the external properties satisfied by the previous function are satisfied by the current one.
