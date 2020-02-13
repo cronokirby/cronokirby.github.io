@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Cronokirby's Blog]]></title><description><![CDATA[A blog about programming and other things]]></description><link>https://cronokirby.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Feb 2020 17:06:47 GMT</lastBuildDate><item><title><![CDATA[Review: The New York Trilogy]]></title><description><![CDATA[This is a review of The New York Trilogy written by Paul Auster in 1987. As the title says, this book is actually a trilogy of three shorter…]]></description><link>https://cronokirby.github.io/posts/review-the-new-york-trilogy/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/review-the-new-york-trilogy/</guid><pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a review of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_New_York_Trilogy&quot;&gt;The New York Trilogy&lt;/a&gt; written by &lt;a href=&quot;https://en.wikipedia.org/wiki/Paul_Auster&quot;&gt;Paul Auster&lt;/a&gt; in 1987.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Cronokirby's Blog]]></title><description><![CDATA[A blog about programming and other things]]></description><link>https://cronokirby.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Feb 2020 17:29:08 GMT</lastBuildDate><item><title><![CDATA[Against Fullstack Data Sharing]]></title><description><![CDATA[Foo
+ff]]></description><link>https://cronokirby.github.io/posts/against-fullstack-data-sharing/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/against-fullstack-data-sharing/</guid><pubDate>Thu, 13 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Foo
+ff&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Review: The New York Trilogy]]></title><description><![CDATA[This is a review of The New York Trilogy written by Paul Auster in 1987. As the title says, this book is actually a trilogy of three shorter…]]></description><link>https://cronokirby.github.io/posts/review-the-new-york-trilogy/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/review-the-new-york-trilogy/</guid><pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a review of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_New_York_Trilogy&quot;&gt;The New York Trilogy&lt;/a&gt; written by &lt;a href=&quot;https://en.wikipedia.org/wiki/Paul_Auster&quot;&gt;Paul Auster&lt;/a&gt; in 1987.&lt;/p&gt;
 &lt;p&gt;As the title says, this book is actually a trilogy of three shorter novels: &lt;em&gt;City of Glass&lt;/em&gt;,
 &lt;em&gt;Ghosts&lt;/em&gt;, and &lt;em&gt;The Locked Room&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Without spoiling the novel, I will say that it should really be taken as a whole, instead of as three
@@ -315,9 +317,9 @@ on files, and instead focus on sections, and then let people organize their sect
 &lt;h1&gt;What syntax should we use?&lt;/h1&gt;
 &lt;p&gt;A lot of markdown files include a header section allowing YAML (this one included):&lt;/p&gt;
 &lt;h3&gt;Sections&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;---
-title: &amp;quot;Integrating Notes and SRS&amp;quot;
----
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;md&quot;&gt;&lt;pre class=&quot;language-md&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;&lt;span class=&quot;token hr punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token title important&quot;&gt;title: &quot;Integrating Notes and SRS&quot;
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;
 
 The content of the post&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;I think it&apos;s a good idea to reuse this as a section header. The main difference is that we allow parsing this anywhere
@@ -328,25 +330,25 @@ in the file instead of just at the beginning.&lt;/p&gt;
 &lt;li&gt;The beginning of a new section&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A section header might end up looking like this:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;---
-section: &amp;quot;My beautiful section&amp;quot;
-description: &amp;quot;This is a summary about computational mechanics&amp;quot;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;md&quot;&gt;&lt;pre class=&quot;language-md&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;&lt;span class=&quot;token hr punctuation&quot;&gt;---&lt;/span&gt;
+section: &quot;My beautiful section&quot;
+description: &quot;This is a summary about computational mechanics&quot;
 tags:
-  - Physics
-  - Programming
----&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;token list punctuation&quot;&gt;-&lt;/span&gt; Physics
+  &lt;span class=&quot;token title important&quot;&gt;- Programming
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;SRS snippets&lt;/h3&gt;
 &lt;p&gt;For the SRS snippets, you want a way of specifying the prompt and information / extra sections.
 I&apos;ve been thinking of doing it like this:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;--?
-# This is valid markdown
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;md&quot;&gt;&lt;pre class=&quot;language-md&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;--?
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;#&lt;/span&gt; This is valid markdown&lt;/span&gt;
 
 And a question?
 --!
 
-Here&amp;#39;s the answer.
+Here&apos;s the answer.
 
-**still valid markdown**
+&lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token content&quot;&gt;still valid markdown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;/span&gt;
 --?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This is a spin off the section header. It&apos;s nice to have similar syntax, in my opinion, because it avoids adding
 too much unnatural syntax to what&apos;s supposed to more or less be readable in raw form. The point of using
@@ -1641,14 +1643,14 @@ and ended up finding the causes of the audio bugs.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/rust-lang/rust-clippy&quot;&gt;clippy&lt;/a&gt;
 on the entire codebase, and found quite a few issues. The main issue had
 to do with a clippy warning for up-casts like:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rs&quot;&gt;&lt;pre class=&quot;language-rs&quot;&gt;&lt;code class=&quot;language-rs&quot;&gt;let x: u8;
-x as u16;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+x &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; u16&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Clippy doesn&apos;t like this because it can introduce implicit truncation if
 the type of &lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; ever grew larger. These types of casts appear very frequently
 throughout the emulator.&lt;/p&gt;
 &lt;p&gt;That being said, clippy actually did find the bugs in the APU causing the audio
 glitches:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rs&quot;&gt;&lt;pre class=&quot;language-rs&quot;&gt;&lt;code class=&quot;language-rs&quot;&gt;if x &amp;amp; 040 == 0x40&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;040&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x40&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This code was flagged as being an impossible check, rightly so. There were a handful
 of issues like this in the APU causing weird behavior, fixing all the clippy
 checks thankfully solved all the audio issues.&lt;/p&gt;
@@ -1662,13 +1664,13 @@ for video, and &lt;a href=&quot;https://crates.io/crates/cpal&quot;&gt;cpal&lt;/
 &lt;p&gt;To make that easier, I ended up creating traits for the video and audio devices,
 and made the core logic of the emulator depend on traits, instead of the
 concrete video and audio structs that were needed:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rs&quot;&gt;&lt;pre class=&quot;language-rs&quot;&gt;&lt;code class=&quot;language-rs&quot;&gt;trait VideoDevice {
-    fn blit_pixels(&amp;amp;mut self, pixels: &amp;amp;PixelBuffer)
-}
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;trait&lt;/span&gt; VideoDevice &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;blit_pixels&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pixels&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;PixelBuffer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-trait AudioDevice {
-    fn push_sample(&amp;amp;mut self, sample: f32)
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;token keyword&quot;&gt;trait&lt;/span&gt; AudioDevice &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;push_sample&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sample&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; f32&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;At that point I realised that the core of the emulator could be split off from
 the rest of the crate that depended on specific backend logic. The core logic
 crate doesn&apos;t even have any dependencies, which is very nice. It could possibly
