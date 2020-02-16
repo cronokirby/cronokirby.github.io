@@ -1,6 +1,283 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Cronokirby's Blog]]></title><description><![CDATA[A blog about programming and other things]]></description><link>https://cronokirby.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Feb 2020 17:29:08 GMT</lastBuildDate><item><title><![CDATA[Against Fullstack Data Sharing]]></title><description><![CDATA[Foo
-ff]]></description><link>https://cronokirby.github.io/posts/against-fullstack-data-sharing/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/against-fullstack-data-sharing/</guid><pubDate>Thu, 13 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Foo
-ff&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Review: The New York Trilogy]]></title><description><![CDATA[This is a review of The New York Trilogy written by Paul Auster in 1987. As the title says, this book is actually a trilogy of three shorter…]]></description><link>https://cronokirby.github.io/posts/review-the-new-york-trilogy/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/review-the-new-york-trilogy/</guid><pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a review of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_New_York_Trilogy&quot;&gt;The New York Trilogy&lt;/a&gt; written by &lt;a href=&quot;https://en.wikipedia.org/wiki/Paul_Auster&quot;&gt;Paul Auster&lt;/a&gt; in 1987.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Cronokirby's Blog]]></title><description><![CDATA[A blog about programming and other things]]></description><link>https://cronokirby.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 16 Feb 2020 10:55:17 GMT</lastBuildDate><item><title><![CDATA[Against Fullstack Data Sharing]]></title><description><![CDATA[This is a post about how I work with data in fullstack development. Specifically, I share what I think are
+good patterns for sharing data…]]></description><link>https://cronokirby.github.io/posts/against-fullstack-data-sharing/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/against-fullstack-data-sharing/</guid><pubDate>Thu, 13 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a post about how I work with data in fullstack development. Specifically, I share what I think are
+good patterns for sharing data and logic between the frontend and the backend of an application.&lt;/p&gt;
+&lt;p&gt;Initially, I was for sharing a lot of logic, classes, and data formats between a frontend and backend
+written in the same language, but I&apos;ve come to change my mind after trying it out on a real project.&lt;/p&gt;
+&lt;h1&gt;Fullstack what now?&lt;/h1&gt;
+&lt;p&gt;As the title indicates, I&apos;m against &lt;em&gt;Fullstack Data Sharing&lt;/em&gt;, but what exactly do I mean by that?
+I struggled to summarize the idea in a few words for the title, so let me give a more detailed
+explanation of what I mean.&lt;/p&gt;
+&lt;p&gt;I like building apps on the web, using Javascript. Or rather, Typescript, but the process and libraries
+are the same. One advantage of JS is that you can have the same language for the backend and
+frontend of your application. The backend is the code that you, the developer, are responsible for
+running, and the frontend is what you send to the users of your application. The backend code is
+usually run on some kind of server, and most of its work centers around a database. The frontend
+presents the functionality of the backend in a nice package for the user.&lt;/p&gt;
+&lt;p&gt;Anyways, you need to &lt;em&gt;do things&lt;/em&gt; on both sides, and you always have common data between the sides.
+For example, if I&apos;m making a twitter clone, the concept of a &quot;Tweet&quot; exists on both the backend,
+and the frontend. The backend will need to create and retrieve Tweets using the database,
+and the frontend will need to display Tweets to the user, allow them to create Tweets, etc.
+You need code to handle and manipulate this data on both sides, as well as ways to transfer
+things between both sides.&lt;/p&gt;
+&lt;h2&gt;At least 2 serialization formats&lt;/h2&gt;
+&lt;p&gt;Let&apos;s focus a little bit on &lt;em&gt;serialization&lt;/em&gt;: transforming your code&apos;s representation of data
+into something that can be sent over the wire, or stored in a database. &lt;/p&gt;
+&lt;p&gt;There are 2 main places you need to serialize your data in a web application:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Moving data into the database&lt;/li&gt;
+&lt;li&gt;Moving data between the backend and the frontend&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;JSON on the pipes&lt;/h3&gt;
+&lt;p&gt;For moving data between the backend and the frontend, in 2020 the ubiquitous format is JSON. If it
+were 2004, maybe I&apos;d be saying XML instead, but those days are past us. Regardless of how you&apos;re
+communicating with the backend, be it with GraphQL, REST, gRPC, or something else, you&apos;ll be using
+JSON, or something like it.&lt;/p&gt;
+&lt;p&gt;JSON has maps, strings and lists, which can be used as the basic building blocks for pretty much
+anything:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;created-at&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2020-02-12&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;replies&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;23424234&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;3234234234&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is an example of a JSON structure, and it showcases how we can represent a lot of nifty things
+with a relatively simple format. JSON is sufficient to represent a lot of our data structures.&lt;/p&gt;
+&lt;p&gt;Another advantage of JSON with JS, is that we can directly serialize (simple) JS objects to JSON:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// {&quot;foo&quot;: &quot;bar&quot;}&lt;/span&gt;
+&lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;foo&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;bar&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;there are some caveats with this approach I&apos;ll get into a bit later, but for now we&apos;ll put a tick
+in the &quot;advantages&quot; column.&lt;/p&gt;
+&lt;h3&gt;ORMs in the back&lt;/h3&gt;
+&lt;p&gt;So JSON&apos;s got us covered for sending things to the frontend, but what about communication between
+the backend and our database? Well, this is where ORMs (usually) come in.&lt;/p&gt;
+&lt;p&gt;Essentially, an ORM (Object Relational Mapping) wraps the communication between our backend
+and our database, by organizing  the functionality we need from our database around the &lt;em&gt;objects&lt;/em&gt; in
+our application.&lt;/p&gt;
+&lt;p&gt;For example, instead of directly writing the SQL to create a Tweet, we&apos;d have a Tweet &lt;em&gt;class&lt;/em&gt;, with
+a method to create a new Tweet as part of the class. We&apos;ve moved the logic needed to interact
+with the database into the objects we work with themselves.&lt;/p&gt;
+&lt;p&gt;Examples of ORMs in Typescript-land include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://mongoosejs.com/&quot;&gt;Mongoose&lt;/a&gt; for MongoDB&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://typeorm.io&quot;&gt;TypeORM&lt;/a&gt; for SQL like databases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For every sentence I could write about ORMs here, there&apos;s about 10 blog posts debating their merits;
+I won&apos;t go into that here. Those blog posts do a much better job of illustrating the pros and cons
+than I ever could in this post.&lt;/p&gt;
+&lt;p&gt;Now, what I do want to highlight about ORMs is that they impose at least one representation of data
+onto you. Before having a database, I might have worked with Tweets using one class, or representation,
+but if I want to now use TypeORM (for example), then I need to introduce a new representation
+of Tweets, or tailor the existing one to much how TypeORM needs things to be.&lt;/p&gt;
+&lt;p&gt;Let&apos;s take one of the examples on TypeORM&apos;s homepage:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;@&lt;span class=&quot;token function&quot;&gt;Entity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    @&lt;span class=&quot;token function&quot;&gt;PrimaryGeneratedColumn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    id&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    @&lt;span class=&quot;token function&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    firstName&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    @&lt;span class=&quot;token function&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    lastName&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    @&lt;span class=&quot;token function&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    age&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;TypeORM requires us to create a &lt;em&gt;Model&lt;/em&gt;, as they call it, which is the representation TypeORM prefers
+for our data. Now, this library isn&apos;t being arbitrary in requiring us to annotate our class like this.
+The reason TypeORM requires us to have &lt;code class=&quot;language-text&quot;&gt;@Column&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;@PrimaryGeneratedColumn&lt;/code&gt; annotations is
+because it uses this to figure out how our Model maps onto our database.&lt;/p&gt;
+&lt;p&gt;When you use an ORM, you move the database-friendly representation of your data from the database
+itself, into your application. In exchange, you don&apos;t need to convert from your application&apos;s
+representation into your database&apos;s.&lt;/p&gt;
+&lt;p&gt;Without an ORM, you&apos;d have the database&apos;s view of things, as defined by how your table is defined
+in SQL, say:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    id &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;primary&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    firstName &lt;span class=&quot;token keyword&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    lastName &lt;span class=&quot;token keyword&quot;&gt;varchar&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    age &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and then you&apos;d have to write code to convert from what your application has defined a User to be,
+into what the SQl says.&lt;/p&gt;
+&lt;p&gt;With an ORM, you have to define what a User is based on what your ORM requires, but it takes care
+of the database for you.&lt;/p&gt;
+&lt;h3&gt;No ORM?&lt;/h3&gt;
+&lt;p&gt;If you don&apos;t use an ORM, you still have a serialization format, since you need to convert your data
+into something that the database can use, either by writing some SQL, in the case of a relational
+database, or massaging it into the right document format, for the hip and cool NoSQL document
+databases.&lt;/p&gt;
+&lt;h2&gt;Sharing in this Context&lt;/h2&gt;
+&lt;p&gt;So you have some representation of your entity / concept in your application, be it in the form
+of a class, an ORM model, an interface, a comment, etc. What I mean by sharing, is literally having
+the code that defines this be used both in the backend of the application, and the frontend of
+the application.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// shared/tweet.ts&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Tweet&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  id&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  content&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  authorID&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And then &lt;code class=&quot;language-text&quot;&gt;frontend/showtweet.ts&lt;/code&gt; imports this file, and so does &lt;code class=&quot;language-text&quot;&gt;backend/createtweet.ts&lt;/code&gt;. So now
+this code is shared between both the frontend and the backend.&lt;/p&gt;
+&lt;h3&gt;Advantages&lt;/h3&gt;
+&lt;p&gt;This approach does have its merits, and at first I thought it was good as well. The main advantage
+here is respecting the &quot;Don&apos;t Repeat Yourself&quot; principle.&lt;/p&gt;
+&lt;p&gt;A commonly heard mantra in programming is &lt;strong&gt;DRY&lt;/strong&gt;, and using the same representation of data
+on both the backend and the frontend is definitely respecting DRY, at least literally.
+The alternative does involve repeating what you mean by a &lt;em&gt;Tweet&lt;/em&gt;, or having two slightly
+different concepts of a &lt;em&gt;Tweet&lt;/em&gt;. This repetition can lead to problems if the two occurrences
+grow out of sync.&lt;/p&gt;
+&lt;h3&gt;Disadvantages&lt;/h3&gt;
+&lt;p&gt;The rest of this post is dedicated to explaining the disadvantages of sharing your data representations
+verbatim between the frontend and the backend. I think there are enough disadvantages to warrant
+avoiding this approach (at least in most cases), but I already announced that in the title, didn&apos;t I?&lt;/p&gt;
+&lt;h1&gt;Sharing your ORM model is &quot;fun&quot;&lt;/h1&gt;
+&lt;p&gt;(And by &quot;fun&quot;, I mean &quot;painful&quot;, as usual)&lt;/p&gt;
+&lt;p&gt;The biggest issue with sharing your ORM model directly, at least with the ORMs I know of, is that
+the ORM depends on the database. More specifically, an ORM library is going to have a dependency
+on the database driver it wraps. The database driver is the library that provides a slight
+abstraction over the network protocol the database communicates with. The database driver is probably
+not something you want to be shipping to your user.&lt;/p&gt;
+&lt;p&gt;There&apos;s a common complaint going around that our applications, and especially those in the NPM
+ecosystem, have gotten a bit too dependency-hungry. We have millions of dependencies, 8 layers deep,
+and we can&apos;t stop adding more of them to our projects.&lt;/p&gt;
+&lt;p&gt;Illustrated:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/node_modules_heavy.png&quot; alt=&quot;A diagram shows that .node_modules is heavier than a black hole&quot;&gt;&lt;/p&gt;
+&lt;p&gt;One reason for this (I don&apos;t think I have the guts to pretend to diagnose the problem), is that
+it&apos;s pretty easy to add a new dependency to an application, and hard to feel the costs.&lt;/p&gt;
+&lt;p&gt;Well, on the backend you don&apos;t feel the costs. On the frontend you actually try to care about
+your bundle size, at least if you haven&apos;t given up hope yet. If your frontend loads quickly
+and your bundle size is manageable, you try and avoid adding big libraries if it&apos;s not necessary.
+You might even take pride in the size of your bundle.&lt;/p&gt;
+&lt;p&gt;With that in mind, importing the database driver into your frontend is probably not the best idea.&lt;/p&gt;
+&lt;p&gt;If you import the ORM model directly, you&apos;re depending on the model, and thus the ORM, and so you
+need to bundle the database driver in there as well.&lt;/p&gt;
+&lt;h2&gt;Workarounds&lt;/h2&gt;
+&lt;p&gt;Now, you can avoid bundling the database driver in the frontend, by using some kind of dummy version
+of the annotations the ORM provides, which avoids actually generating the database methods for the model
+you have.&lt;/p&gt;
+&lt;p&gt;The problem with this is that it kind of weakens the promise of sharing code between the backend
+and the frontend. The promise is that with a shared library, you use it just like any other piece of
+code, on both sides of your application. There&apos;s no need for conditional logic or fooling around
+with advanced settings, it&apos;s just code you import directly.&lt;/p&gt;
+&lt;p&gt;If you now need to conditionally import a different version of the ORM in your frontend, you&apos;re
+weakening the promise a bit. Now it&apos;s not as simple as it was before to import the shared code,
+and you wonder if it might have been better to just duplicate a little bit of code instead
+of trying to share those models.&lt;/p&gt;
+&lt;h2&gt;The wrong Model?&lt;/h2&gt;
+&lt;p&gt;Another problem with using the database&apos;s representation in the frontend is a mismatch between
+what the frontend uses, and what the database has.&lt;/p&gt;
+&lt;p&gt;There might be things in the database that never actually appear in the frontend. There are parts of
+the database you might not use in &lt;em&gt;this specific&lt;/em&gt; frontend application, if it&apos;s not the only
+consumer of your database. There might also be details of you implement your API, such as
+&lt;strong&gt;Join Tables&lt;/strong&gt;, which shouldn&apos;t show up in your frontend.&lt;/p&gt;
+&lt;p&gt;You might also have some parts of the data you send to your frontend be calculated on the fly,
+for example, counting the number of posts. This count doesn&apos;t appear in your ORM model, since it isn&apos;t
+in the database, but rather queried on demand. But because you use this count as if it were a field
+in the frontend, you now have a different representation of your data in your frontend.&lt;/p&gt;
+&lt;p&gt;If details like these leak through the ORM abstraction you have in the backend, then that&apos;s a sign
+that you probably shouldn&apos;t be sharing these models directly with the frontend.&lt;/p&gt;
+&lt;h1&gt;Creating a shared class&lt;/h1&gt;
+&lt;p&gt;&quot;Okay, okay, I won&apos;t share the ORM model directly with the frontend&quot;&lt;/p&gt;
+&lt;p&gt;Great! But we&apos;re not done yet, unfortunately. Let&apos;s say you&apos;ve observed my previous gripes, and
+even agreed with them, so now you separate things in two:&lt;/p&gt;
+&lt;p&gt;You have your ORM model, which you use for interacting with the database, and a new representation that
+you share with both sides. This representation is probably a class, with some methods to do work
+on the internal data.&lt;/p&gt;
+&lt;h2&gt;Serialization&lt;/h2&gt;
+&lt;p&gt;This part is a bit Typescript specific.&lt;/p&gt;
+&lt;p&gt;If you have a simple Typescript interface, you can return that very easily from an API endpoint,
+because it maps directly to JSON. Most frameworks will provide a way to just &quot;send&quot; the object
+itself:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/endpoint&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;req&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; res&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;woah&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;mama&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is real convenient.&lt;/p&gt;
+&lt;p&gt;Now, if you have a class, you have a problem. You can&apos;t directly send the class as JSON, now you
+need to write logic to serialize your class to JSON, and logic to parse your class back from the
+JSON on the frontend.&lt;/p&gt;
+&lt;p&gt;If you try to just naively &lt;code class=&quot;language-text&quot;&gt;JSON.stringify&lt;/code&gt; it, you&apos;ll realize that the methods don&apos;t serialize
+and can&apos;t be parsed back, so you need to always go through the class constructor on both ends.&lt;/p&gt;
+&lt;p&gt;To work around this, you can separate the &quot;methods&quot; of your class into functions, and then just
+work with an interface, but that kind of defeats the point of using a class in the first place.&lt;/p&gt;
+&lt;h2&gt;Do you really need to share everything?&lt;/h2&gt;
+&lt;p&gt;The serialization problems are more of an inconvenience. The biggest problem I have with this
+&quot;share&quot; everything approach, is that you might be sharing things you don&apos;t need on the frontend,
+or calculating things on the frontend you could have done in advance.&lt;/p&gt;
+&lt;p&gt;For example, some fields that are necessary in the backend might not be needed on the frontend. One
+common example is the ubiquitous &lt;code class=&quot;language-text&quot;&gt;id&lt;/code&gt; field, On the backend you&apos;re going to be using this one a lot,
+but on the frontend, you usually don&apos;t need the &lt;code class=&quot;language-text&quot;&gt;id&lt;/code&gt; of something, outside of the URL. Having
+to send this each time is a bit of a waste.&lt;/p&gt;
+&lt;p&gt;The frontend usually wants &lt;em&gt;the result&lt;/em&gt; of a method, and not the logic of method. For example,
+if a user has an array of Tweets as part of their representation, the frontend may want to
+know the count. They may want just the count, and not even the tweets themselves. This share
+everything approach will send the tweets unnecessarily, and then make the frontend calculate
+the count iself.&lt;/p&gt;
+&lt;p&gt;We could also include the count as part of the backend representation, but this becomes awkward
+if we don&apos;t need the count for certain frontend things.&lt;/p&gt;
+&lt;h2&gt;Needs aren&apos;t uniform across the frontend.&lt;/h2&gt;
+&lt;p&gt;We&apos;ve talked about sharing code in a general sense, but we haven&apos;t really talked about the needs
+of a frontend specifically. One aspect of a frontend you might not think about initially is how
+the needs of your representation change based on which part of the frontend you&apos;re at. For example
+if I&apos;m displaying all the posts, I don&apos;t need their &lt;em&gt;content&lt;/em&gt;, I just need the metadata. I only
+need everything about the post on the page dedicated to that post.&lt;/p&gt;
+&lt;p&gt;If my API always returns everything about the post, that&apos;s quite a waste for the main page,
+where I&apos;m requesting all posts, but only using a fraction of the data for each post.&lt;/p&gt;
+&lt;p&gt;Because of these varying needs, there isn&apos;t a single representation of a concept on the frontend.
+Rather, there&apos;s multiple &lt;em&gt;slices&lt;/em&gt; of the same concept, which includes &lt;strong&gt;all&lt;/strong&gt; the things you
+might want to know about some entity. Ideally, you&apos;d share this inclusive concept with the frontend,
+and then allow it select which subset of information it needs for a specific part of the application.&lt;/p&gt;
+&lt;h1&gt;What do I advocate then?&lt;/h1&gt;
+&lt;p&gt;In one word: &lt;a href=&quot;https://graphql.org/&quot;&gt;&lt;strong&gt;GraphQL&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&apos;ve been hinting at it in the way I&apos;ve described certain problems, and certain needs
+the frontend has. In brief I think your &quot;shared representation&quot; should be the GraphQL structure
+you provide, and the frontend can have as many slices of that representation as it needs. This
+structure should not mirror the data you store, but rather provide both the data the frontend
+might need, as well as the calculations it might want to do.&lt;/p&gt;
+&lt;p&gt;With GraphQL, you provide all the data and calculations the frontend might want, and then each
+part of the frontend can make requests for exactly the parts they need. This prevents the oversharing
+of unnecessary info, since each part of the frontend can just request the fields it needs.&lt;/p&gt;
+&lt;p&gt;This approach also helps avoid duplicate logic, by keeping it in the backend. Since a lot of the
+methods we had previously have now become GraphQl fields, we no longer share or duplicate the
+logic in the frontend. Instead, the frontend just sees the logic as if it were a static field,
+which simplifies the work your frontend has to do. You can also take advantage of caching, to
+avoid recalculating things. Caching class methods is possible, but a lot less convenient.&lt;/p&gt;
+&lt;p&gt;You&apos;re also free to handle things however you want on the backend. You just need to implement
+your resolvers. The frontend doesn&apos;t need to know which fields are stored in the database,
+which are calculated, and what&apos;s actually stored in the database. The backend and the frontend
+are now very decoupled, but still share a nice source of truth. GraphQL completely eliminates
+the problem of serialization across API boundaries, since it will massage things to and from
+JSON for you.&lt;/p&gt;
+&lt;h2&gt;User-Centric Graph&lt;/h2&gt;
+&lt;p&gt;You also want to avoid providing an all encompassing Graph. Instead, your graph should take a viewpoint
+more specific to your application. For example, if you have a frontend application where users
+interact with data specific to them, and don&apos;t have access to other user&apos;s data, then you should
+provide a Graph that reflects that reality.&lt;/p&gt;
+&lt;p&gt;In this case, you&apos;d have a field for the current user, rather than a field for all users, since
+your frontend shouldn&apos;t be displaying all the users anyways.&lt;/p&gt;
+&lt;p&gt;Do:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;graphql&quot;&gt;&lt;pre class=&quot;language-graphql&quot;&gt;&lt;code class=&quot;language-graphql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;me&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Instead of:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;graphql&quot;&gt;&lt;pre class=&quot;language-graphql&quot;&gt;&lt;code class=&quot;language-graphql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Query&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;myUserID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ID&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;token attr-name&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$userID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ID&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; User&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This does mean that you may end up with multiple GraphQL endpoints over a single database, which
+is a good thing. You might want to provide one representation optimized for your frontend
+application, and another for your analytics dashboard. This is normal, since the needs and access
+restrictions of both applications are very different.&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I think you should make sharing classes and logic between the backend and frontend of your application
+the exception, and not the the rule. The rule should be to share things by putting them into
+your GraphQL representation. This representation acts both as a contract / source of truth between
+both sides, will letting them be sufficiently decoupled.&lt;/p&gt;
+&lt;p&gt;Hopefully this post was useful, and I plan to supplement it with an example application, at some point.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Review: The New York Trilogy]]></title><description><![CDATA[This is a review of The New York Trilogy written by Paul Auster in 1987. As the title says, this book is actually a trilogy of three shorter…]]></description><link>https://cronokirby.github.io/posts/review-the-new-york-trilogy/</link><guid isPermaLink="false">https://cronokirby.github.io/posts/review-the-new-york-trilogy/</guid><pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is a review of &lt;a href=&quot;https://en.wikipedia.org/wiki/The_New_York_Trilogy&quot;&gt;The New York Trilogy&lt;/a&gt; written by &lt;a href=&quot;https://en.wikipedia.org/wiki/Paul_Auster&quot;&gt;Paul Auster&lt;/a&gt; in 1987.&lt;/p&gt;
 &lt;p&gt;As the title says, this book is actually a trilogy of three shorter novels: &lt;em&gt;City of Glass&lt;/em&gt;,
 &lt;em&gt;Ghosts&lt;/em&gt;, and &lt;em&gt;The Locked Room&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Without spoiling the novel, I will say that it should really be taken as a whole, instead of as three
